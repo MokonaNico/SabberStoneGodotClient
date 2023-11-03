@@ -1,0 +1,35 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabberStoneGodotClient", "SabberStoneGodotClient.csproj", "{AB8905D2-3A12-47A4-904E-0D4597F0A001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabberStoneCore", "..\SabberStone\SabberStoneCore\SabberStoneCore.csproj", "{44164F67-3AE3-47ED-9C1E-F7A45C47A70D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabberStonePersonalTest", "..\SabberStone\SabberStonePersonalTest\SabberStonePersonalTest\SabberStonePersonalTest.csproj", "{5EFEF281-3EE6-4C1A-9A94-564A35907F23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB8905D2-3A12-47A4-904E-0D4597F0A001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB8905D2-3A12-47A4-904E-0D4597F0A001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB8905D2-3A12-47A4-904E-0D4597F0A001}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{AB8905D2-3A12-47A4-904E-0D4597F0A001}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{AB8905D2-3A12-47A4-904E-0D4597F0A001}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{AB8905D2-3A12-47A4-904E-0D4597F0A001}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{44164F67-3AE3-47ED-9C1E-F7A45C47A70D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44164F67-3AE3-47ED-9C1E-F7A45C47A70D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44164F67-3AE3-47ED-9C1E-F7A45C47A70D}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44164F67-3AE3-47ED-9C1E-F7A45C47A70D}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{44164F67-3AE3-47ED-9C1E-F7A45C47A70D}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{44164F67-3AE3-47ED-9C1E-F7A45C47A70D}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+		{5EFEF281-3EE6-4C1A-9A94-564A35907F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EFEF281-3EE6-4C1A-9A94-564A35907F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EFEF281-3EE6-4C1A-9A94-564A35907F23}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EFEF281-3EE6-4C1A-9A94-564A35907F23}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{5EFEF281-3EE6-4C1A-9A94-564A35907F23}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EFEF281-3EE6-4C1A-9A94-564A35907F23}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cardback.png-83201be7b966ffa7049e3d4ae270f3af.stex"
+path="res://.import/CS2_147.jpg-3438e0537b83489684037ac29920ed72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/cardback.png"
-dest_files=[ "res://.import/cardback.png-83201be7b966ffa7049e3d4ae270f3af.stex" ]
+source_file="res://Assets/cards/CS2_147.jpg"
+dest_files=[ "res://.import/CS2_147.jpg-3438e0537b83489684037ac29920ed72.stex" ]
 
 [params]
 

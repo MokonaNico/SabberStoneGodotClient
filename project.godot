@@ -12,7 +12,11 @@ config_version=4
 
 config/name="SabberStoneGodotClient"
 run/main_scene="res://Scenes/Main.tscn"
-config/icon="res://Assets/icon.png"
+config/icon="res://Assets/sprite/mana_crystal.png"
+
+[global]
+
+icon=false
 
 [gui]
 

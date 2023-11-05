@@ -14,10 +14,16 @@ public class CardInfo
     public string cardClass { get; set; }
 }
 
+public enum Table
+{
+    CardTable,DeckTable
+}
+
 public class DeckBuilder : Control
 {
-    public PackedScene YourPackedScene; 
-    private VBoxContainer _vBoxContainer;
+    public PackedScene PackedCardTableLine; 
+    private VBoxContainer CardListTable;
+    private VBoxContainer DeckListTable;
     private List<CardInfo> cardsJson;
     
     private TextureRect cardImg;
@@ -29,8 +35,11 @@ public class DeckBuilder : Control
     {
         loadJson();
         
-        YourPackedScene = (PackedScene)ResourceLoader.Load("res://Scenes/CardTableLine.tscn");
-        _vBoxContainer = GetNode<VBoxContainer>("VBoxContainer/HBoxContainer/CardList/Table/Data/ScrollContainer/MarginContainer/VBoxContainer");
+        PackedCardTableLine = (PackedScene)ResourceLoader.Load("res://Scenes/CardTableLine.tscn");
+        
+        CardListTable = GetNode<VBoxContainer>("VBoxContainer/HBoxContainer/CardList/Table/Data/ScrollContainer/MarginContainer/TableData");
+        DeckListTable = GetNode<VBoxContainer>("VBoxContainer/HBoxContainer/DeckList/Table/Data/ScrollContainer/MarginContainer/TableData");
+        
         cardImg = GetNode<TextureRect>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Card/CardImg");
         cardImgSpell = GetNode<TextureRect>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Card/CardImgSpell");
         card = GetNode<TextureRect>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Card/Card");
@@ -38,20 +47,9 @@ public class DeckBuilder : Control
         
         foreach (CardInfo card in cardsJson)
         {
-            CardTableLine instance = (CardTableLine) YourPackedScene.Instance();
-            Label nameLabel = instance.GetNode<Label>("HBoxContainer/Name");
-            Label typeLabel = instance.GetNode<Label>("HBoxContainer/Type");
-            Label costLabel = instance.GetNode<Label>("HBoxContainer/Cost");
-            Label classLabel = instance.GetNode<Label>("HBoxContainer/Class");
-            instance.id = card.id;
-            nameLabel.Text = card.name;
-            typeLabel.Text = card.type;
-            instance.type = card.type;
-            costLabel.Text = card.cost.ToString();
-            classLabel.Text = card.cardClass;
-
+            CardTableLine instance = createCardTableLine(card, Table.CardTable);
             instance.Connect("SelectedCardChange", this, nameof(updateCardImage));
-            _vBoxContainer.AddChild(instance);
+            CardListTable.AddChild(instance);
         }
     }
 
@@ -92,5 +90,38 @@ public class DeckBuilder : Control
         ShaderMaterial material = (ShaderMaterial)currentCard.Material.Duplicate();
         material.SetShaderParam("texture1", texture);
         currentCard.Material = material;
+    }
+
+    private void onAddCardButtonpressed()
+    {
+        if (CardTableLine.selectedCard.table != Table.CardTable) return;
+        CardInfo card = cardsJson.Find(c => c.id == CardTableLine.selectedCard.id);
+        CardTableLine instance = createCardTableLine(card, Table.DeckTable);
+        instance.Connect("SelectedCardChange", this, nameof(updateCardImage));
+        DeckListTable.AddChild(instance);
+    }
+    
+    private void onRemoveCardButtonpressed()
+    {
+        if (CardTableLine.selectedCard.table != Table.DeckTable) return;
+        CardTableLine.selectedCard.QueueFree();
+        CardTableLine.selectedCard = null;
+    }
+
+    private CardTableLine createCardTableLine(CardInfo card, Table table)
+    {
+        CardTableLine instance = (CardTableLine) PackedCardTableLine.Instance();
+        Label nameLabel = instance.GetNode<Label>("HBoxContainer/Name");
+        Label typeLabel = instance.GetNode<Label>("HBoxContainer/Type");
+        Label costLabel = instance.GetNode<Label>("HBoxContainer/Cost");
+        Label classLabel = instance.GetNode<Label>("HBoxContainer/Class");
+        instance.id = card.id;
+        nameLabel.Text = card.name;
+        typeLabel.Text = card.type;
+        instance.type = card.type;
+        costLabel.Text = card.cost.ToString();
+        classLabel.Text = card.cardClass;
+        instance.table = table;
+        return instance;
     }
 }

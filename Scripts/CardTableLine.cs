@@ -9,6 +9,7 @@ public class CardTableLine : ColorRect
     public static CardTableLine selectedCard;
     public string id;
     public string type;
+    public Table table;
     
     private bool MouseOver = false;
 
@@ -25,6 +26,7 @@ public class CardTableLine : ColorRect
                     selectedCard.Color = new Color(0,0,0,0);
                 }
                 selectedCard = this;
+
                 EmitSignal(nameof(SelectedCardChange));
             }
         }

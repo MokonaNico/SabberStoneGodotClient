@@ -1,34 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/ScrollContainer.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/DeckBuilder.cs" type="Script" id=2]
-[ext_resource path="res://Assets/sprite/inhand_minion_neutral_upscayl.png" type="Texture" id=3]
-[ext_resource path="res://Assets/cards/CS2_189.jpg" type="Texture" id=4]
-[ext_resource path="res://Assets/shader/mask.tres" type="Material" id=5]
-[ext_resource path="res://Assets/sprite/inhand_spell_mage.png" type="Texture" id=6]
-[ext_resource path="res://Assets/cards/CS2_023.jpg" type="Texture" id=7]
-[ext_resource path="res://Assets/mask/card_spell_mask.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/CardMinion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/CardSpell.tscn" type="PackedScene" id=4]
 
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;
-
-uniform sampler2D texture1 : hint_albedo;
-uniform sampler2D texture2 : hint_albedo;
-
-void fragment() {
-    vec4 tex1 = texture(texture1, UV);
-    vec4 tex2 = texture(texture2, UV);
-
-    // Mask the first texture with the second texture's alpha channel
-    tex1 *= tex2.a;
-
-    COLOR = tex1;
-}"
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/texture1 = ExtResource( 7 )
-shader_param/texture2 = ExtResource( 8 )
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="Main" type="Node"]
 
@@ -170,58 +147,25 @@ margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
 
-[node name="Card" type="Control" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
+[node name="Cards" type="PanelContainer" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
+margin_right = 271.0
+margin_bottom = 341.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="CardMinion" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 271.0
 margin_bottom = 341.0
 size_flags_vertical = 3
 
-[node name="CardImg" type="TextureRect" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Card"]
-material = ExtResource( 5 )
-anchor_left = 0.103
-anchor_top = 0.065
-anchor_right = 0.893
-anchor_bottom = 0.618
-margin_left = -0.102001
-margin_top = 0.0299988
-margin_right = 0.0379791
-margin_bottom = -1.884
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 6
-
-[node name="Card" type="TextureRect" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Card"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
-texture = ExtResource( 3 )
-expand = true
-stretch_mode = 6
-
-[node name="CardImgSpell" type="TextureRect" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Card"]
+[node name="CardSpell" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards" instance=ExtResource( 4 )]
 visible = false
-material = SubResource( 2 )
-anchor_left = 0.103
-anchor_top = 0.095
-anchor_right = 0.893
-anchor_bottom = 0.642
-margin_left = -0.102001
-margin_top = -0.110001
-margin_right = 0.0379791
-margin_bottom = 0.0039978
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 6
-
-[node name="CardSpell" type="TextureRect" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Card"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
-texture = ExtResource( 6 )
-expand = true
-stretch_mode = 6
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 271.0
+margin_bottom = 341.0
 
 [node name="AddCardButton" type="Button" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
 margin_top = 345.0

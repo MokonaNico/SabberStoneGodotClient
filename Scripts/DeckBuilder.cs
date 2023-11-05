@@ -25,11 +25,8 @@ public class DeckBuilder : Control
     private VBoxContainer CardListTable;
     private VBoxContainer DeckListTable;
     private List<CardInfo> cardsJson;
-    
-    private TextureRect cardImg;
-    private TextureRect cardImgSpell;
-    private TextureRect card;
-    private TextureRect cardSpell;
+    private CardMinion cardMinion;
+    private CardSpell cardSpell;
     
     public override void _Ready()
     {
@@ -39,11 +36,8 @@ public class DeckBuilder : Control
         
         CardListTable = GetNode<VBoxContainer>("VBoxContainer/HBoxContainer/CardList/Table/Data/ScrollContainer/MarginContainer/TableData");
         DeckListTable = GetNode<VBoxContainer>("VBoxContainer/HBoxContainer/DeckList/Table/Data/ScrollContainer/MarginContainer/TableData");
-        
-        cardImg = GetNode<TextureRect>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Card/CardImg");
-        cardImgSpell = GetNode<TextureRect>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Card/CardImgSpell");
-        card = GetNode<TextureRect>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Card/Card");
-        cardSpell = GetNode<TextureRect>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Card/CardSpell");
+        cardMinion = GetNode<CardMinion>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards/CardMinion");
+        cardSpell = GetNode<CardSpell>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards/CardSpell");
         
         foreach (CardInfo card in cardsJson)
         {
@@ -71,30 +65,27 @@ public class DeckBuilder : Control
 
     private void updateCardImage()
     {
-        Console.WriteLine("Update");
         string id = CardTableLine.selectedCard.id;
-        Texture texture = (Texture)ResourceLoader.Load("res://Assets/cards/" + id + ".jpg");
 
         bool isCardMinion = CardTableLine.selectedCard.type == "MINION";
         bool isCardSpell = CardTableLine.selectedCard.type == "SPELL";
-        cardImg.Visible = isCardMinion;
-        card.Visible = isCardMinion;
-        cardImgSpell.Visible = isCardSpell;
+
+        cardMinion.Visible = isCardMinion;
         cardSpell.Visible = isCardSpell;
         
-        TextureRect currentCard;
-        if (isCardMinion) currentCard = cardImg;
-        if (isCardSpell) currentCard = cardImgSpell;
-        else currentCard = cardImg;
-        
-        ShaderMaterial material = (ShaderMaterial)currentCard.Material.Duplicate();
-        material.SetShaderParam("texture1", texture);
-        currentCard.Material = material;
+        if (isCardMinion)
+        {
+            cardMinion.setImage(CardTableLine.selectedCard.image);
+        }
+        else if (isCardSpell)
+        {
+            cardSpell.setImage(CardTableLine.selectedCard.image);
+        }
     }
 
     private void onAddCardButtonpressed()
     {
-        if (CardTableLine.selectedCard.table != Table.CardTable) return;
+        if (CardTableLine.selectedCard == null || CardTableLine.selectedCard.table != Table.CardTable) return;
         CardInfo card = cardsJson.Find(c => c.id == CardTableLine.selectedCard.id);
         CardTableLine instance = createCardTableLine(card, Table.DeckTable);
         instance.Connect("SelectedCardChange", this, nameof(updateCardImage));
@@ -103,7 +94,7 @@ public class DeckBuilder : Control
     
     private void onRemoveCardButtonpressed()
     {
-        if (CardTableLine.selectedCard.table != Table.DeckTable) return;
+        if (CardTableLine.selectedCard == null || CardTableLine.selectedCard.table != Table.DeckTable) return;
         CardTableLine.selectedCard.QueueFree();
         CardTableLine.selectedCard = null;
     }
@@ -122,6 +113,7 @@ public class DeckBuilder : Control
         costLabel.Text = card.cost.ToString();
         classLabel.Text = card.cardClass;
         instance.table = table;
+        instance.image = (Texture)ResourceLoader.Load("res://Assets/cards/" + card.id + ".jpg");
         return instance;
     }
 }

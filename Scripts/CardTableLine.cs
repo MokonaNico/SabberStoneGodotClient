@@ -10,6 +10,7 @@ public class CardTableLine : ColorRect
     public string id;
     public string type;
     public Table table;
+    public Texture image;
     
     private bool MouseOver = false;
 

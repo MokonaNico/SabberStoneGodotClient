@@ -4,8 +4,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabberStoneGodotClient", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabberStoneCore", "..\SabberStone\SabberStoneCore\SabberStoneCore.csproj", "{44164F67-3AE3-47ED-9C1E-F7A45C47A70D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabberStonePersonalTest", "..\SabberStone\SabberStonePersonalTest\SabberStonePersonalTest\SabberStonePersonalTest.csproj", "{5EFEF281-3EE6-4C1A-9A94-564A35907F23}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 	Debug|Any CPU = Debug|Any CPU

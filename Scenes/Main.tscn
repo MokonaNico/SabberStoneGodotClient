@@ -145,32 +145,27 @@ margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
 
-[node name="Control" type="Control" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
+[node name="Cards" type="AspectRatioContainer" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
 margin_right = 271.0
 margin_bottom = 341.0
 size_flags_vertical = 3
+ratio = 0.8
 
-[node name="Cards" type="AspectRatioContainer" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_vertical = 3
-stretch_mode = 1
-
-[node name="CardMinion" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Control/Cards" instance=ExtResource( 3 )]
+[node name="CardMinion" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -35.0
-margin_right = 306.0
-margin_bottom = 341.0
+margin_top = 1.125
+margin_right = 271.0
+margin_bottom = 339.875
 size_flags_vertical = 3
 
-[node name="CardSpell" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Control/Cards" instance=ExtResource( 4 )]
+[node name="CardSpell" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards" instance=ExtResource( 4 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -35.0
-margin_right = 306.0
-margin_bottom = 341.0
+margin_top = 1.125
+margin_right = 271.0
+margin_bottom = 339.875
 
 [node name="AddCardButton" type="Button" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
 margin_top = 345.0

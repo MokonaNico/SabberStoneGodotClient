@@ -80,6 +80,7 @@ public class DeckBuilder : Control
         if (isCardMinion)
         {
             cardMinion.setImage(CardTableLine.selectedCard.image);
+            cardMinion.setName(CardTableLine.selectedCard.name);
         }
         else if (isCardSpell)
         {
@@ -120,6 +121,7 @@ public class DeckBuilder : Control
         Label costLabel = instance.GetNode<Label>("HBoxContainer/Cost");
         Label classLabel = instance.GetNode<Label>("HBoxContainer/Class");
         instance.id = card.id;
+        instance.name = card.name;
         nameLabel.Text = card.name;
         typeLabel.Text = card.type;
         instance.type = card.type;

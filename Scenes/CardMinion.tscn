@@ -1,16 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/sprite/inhand_minion_neutral_upscayl.png" type="Texture" id=1]
 [ext_resource path="res://Assets/shader/mask.tres" type="Material" id=2]
 [ext_resource path="res://Assets/cards/CS2_189.jpg" type="Texture" id=3]
 [ext_resource path="res://Scripts/CardMinion.cs" type="Script" id=4]
-[ext_resource path="res://Assets/font/BelweBoldBT.ttf" type="DynamicFontData" id=5]
-
-[sub_resource type="DynamicFont" id=1]
-size = 30
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 5 )
 
 [node name="CardMinion" type="Control"]
 anchor_right = 1.0
@@ -40,17 +33,24 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="Label" type="Label" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -151.0
-margin_top = 20.0
-margin_right = 151.0
-margin_bottom = 58.0
-custom_fonts/font = SubResource( 1 )
+[node name="NameLabel" type="Label" parent="."]
+anchor_top = 0.528333
+anchor_right = 1.00098
+anchor_bottom = 0.596667
+size_flags_vertical = 3
 text = "Elven Archer"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="NamePlace" type="Control" parent="."]
+anchor_top = 0.528333
+anchor_right = 1.00098
+anchor_bottom = 0.596667
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="resized" from="NamePlace" to="." method="OnCardResized"]

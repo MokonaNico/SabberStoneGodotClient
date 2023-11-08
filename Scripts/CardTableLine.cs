@@ -8,6 +8,7 @@ public class CardTableLine : ColorRect
     
     public static CardTableLine selectedCard;
     public string id;
+    public string name;
     public string type;
     public Table table;
     public Texture image;

@@ -27,6 +27,9 @@ public class DeckBuilder : Control
     private List<CardInfo> cardsJson;
     private CardMinion cardMinion;
     private CardSpell cardSpell;
+
+    private Label cardCountLabel;
+    private int cardCount = 0;
     
     public override void _Ready()
     {
@@ -38,6 +41,7 @@ public class DeckBuilder : Control
         DeckListTable = GetNode<VBoxContainer>("VBoxContainer/HBoxContainer/DeckList/Table/Data/ScrollContainer/MarginContainer/TableData");
         cardMinion = GetNode<CardMinion>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards/CardMinion");
         cardSpell = GetNode<CardSpell>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards/CardSpell");
+        cardCountLabel = GetNode<Label>("VBoxContainer/Panel/CardCountLabel");
         
         foreach (CardInfo card in cardsJson)
         {
@@ -90,6 +94,8 @@ public class DeckBuilder : Control
         CardTableLine instance = createCardTableLine(card, Table.DeckTable);
         instance.Connect("SelectedCardChange", this, nameof(updateCardImage));
         DeckListTable.AddChild(instance);
+        cardCount++;
+        updateCardCount();
     }
     
     private void onRemoveCardButtonpressed()
@@ -97,6 +103,13 @@ public class DeckBuilder : Control
         if (CardTableLine.selectedCard == null || CardTableLine.selectedCard.table != Table.DeckTable) return;
         CardTableLine.selectedCard.QueueFree();
         CardTableLine.selectedCard = null;
+        cardCount--;
+        updateCardCount();
+    }
+
+    private void updateCardCount()
+    {
+        cardCountLabel.Text = cardCount.ToString();
     }
 
     private CardTableLine createCardTableLine(CardInfo card, Table table)

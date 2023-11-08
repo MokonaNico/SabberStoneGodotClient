@@ -346,5 +346,28 @@ margin_right = -436.0
 margin_bottom = -7.0
 text = "Deck name :"
 
+[node name="Label2" type="Label" parent="DeckBuilder/VBoxContainer/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -625.0
+margin_top = -25.0
+margin_right = -537.0
+margin_bottom = -11.0
+text = "Card count :"
+
+[node name="CardCountLabel" type="Label" parent="DeckBuilder/VBoxContainer/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -546.0
+margin_top = -25.0
+margin_right = -525.0
+margin_bottom = -11.0
+text = "0"
+valign = 1
+
 [connection signal="pressed" from="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/AddCardButton" to="DeckBuilder" method="onAddCardButtonpressed"]
 [connection signal="pressed" from="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/RemoveCardButton" to="DeckBuilder" method="onRemoveCardButtonpressed"]

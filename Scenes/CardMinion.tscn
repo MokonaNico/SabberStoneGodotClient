@@ -34,7 +34,7 @@ expand = true
 stretch_mode = 6
 
 [node name="NameLabel" type="Label" parent="."]
-anchor_top = 0.528333
+anchor_top = 0.53
 anchor_right = 1.00098
 anchor_bottom = 0.596667
 size_flags_vertical = 3
@@ -44,13 +44,3 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
-
-[node name="NamePlace" type="Control" parent="."]
-anchor_top = 0.528333
-anchor_right = 1.00098
-anchor_bottom = 0.596667
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[connection signal="resized" from="NamePlace" to="." method="OnCardResized"]

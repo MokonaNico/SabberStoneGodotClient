@@ -8,7 +8,7 @@ public class CardMinion : Control
     
     private Label nameLabel;
     private Control namePlace;
-    
+
     private DynamicFont dynamicFont;
     
     private bool isInit = false;
@@ -17,8 +17,9 @@ public class CardMinion : Control
     {
         CardImg = GetNode<TextureRect>("CardImg");
         CardBack = GetNode<TextureRect>("Card");
+        
         nameLabel = GetNode<Label>("NameLabel");
-        namePlace = GetNode<Control>("NamePlace");
+        namePlace = createLabelPlace(nameLabel);
         
         // Load a font from the filesystem
         dynamicFont = new DynamicFont();
@@ -53,5 +54,26 @@ public class CardMinion : Control
         if (!isInit) return;
         int fontSize = (int) Math.Floor(namePlace.RectSize.y  * 72 / 96);
         dynamicFont.Size = fontSize; 
+    }
+
+    private Control createLabelPlace(Label label)
+    {
+        Control place = new Control();
+
+        place.RectPosition = label.RectPosition;
+        place.RectSize = label.RectSize;
+        place.AnchorBottom = label.AnchorBottom;
+        place.AnchorLeft = label.AnchorLeft;
+        place.AnchorRight = label.AnchorRight;
+        place.AnchorTop = label.AnchorTop;
+
+        place.MarginBottom = label.MarginBottom;
+        place.MarginLeft = label.MarginLeft;
+        place.MarginRight = label.MarginRight;
+        place.MarginTop = label.MarginTop;
+        place.Connect("resized",this,"OnCardResized");
+        
+        AddChild(place);
+        return place;
     }
 }

@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/ScrollContainer.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/DeckBuilder.cs" type="Script" id=2]
-[ext_resource path="res://Scenes/CardMinion.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/CardSpell.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Card.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/sprite/inhand_spell_mage_upscayl.png" type="Texture" id=4]
+[ext_resource path="res://Assets/sprite/inhand_minion_neutral_upscayl.png" type="Texture" id=5]
+[ext_resource path="res://Assets/mask/card_spell_mask.png" type="Texture" id=6]
+[ext_resource path="res://Assets/mask/card_mask - Copie.png" type="Texture" id=7]
 
 [node name="Main" type="Node"]
 
@@ -151,21 +154,16 @@ margin_bottom = 341.0
 size_flags_vertical = 3
 ratio = 0.8
 
-[node name="CardMinion" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards" instance=ExtResource( 3 )]
+[node name="Card" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 1.125
 margin_right = 271.0
 margin_bottom = 339.875
-size_flags_vertical = 3
-
-[node name="CardSpell" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards" instance=ExtResource( 4 )]
-visible = false
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 1.125
-margin_right = 271.0
-margin_bottom = 339.875
+MinionCardImg = ExtResource( 5 )
+SpellCardImg = ExtResource( 4 )
+MinionCardMask = ExtResource( 7 )
+SpellCardMask = ExtResource( 6 )
 
 [node name="AddCardButton" type="Button" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
 margin_top = 345.0

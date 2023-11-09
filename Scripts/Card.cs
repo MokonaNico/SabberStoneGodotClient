@@ -1,46 +1,68 @@
 using Godot;
 using System;
+using SabberStoneCore.Enums;
 
-public class CardMinion : Control
+public partial class Card : Control
 {
-    private TextureRect CardBack;
+    [Export] private Texture MinionCardImg;
+    [Export] private Texture SpellCardImg;
+
+    [Export] private Texture MinionCardMask;
+    [Export] private Texture SpellCardMask;
+    
+    private TextureRect CardFrame;
+    private Texture currentMask;
     private TextureRect CardImg;
     
     private Label nameLabel;
     private Control namePlace;
 
-    private DynamicFont dynamicFont;
+    private DynamicFont nameFont;
     
     private bool isInit = false;
     
     public override void _Ready()
     {
+        CardFrame = GetNode<TextureRect>("CardFrame");
         CardImg = GetNode<TextureRect>("CardImg");
-        CardBack = GetNode<TextureRect>("Card");
-        
         nameLabel = GetNode<Label>("NameLabel");
         namePlace = createLabelPlace(nameLabel);
         
         // Load a font from the filesystem
-        dynamicFont = new DynamicFont();
-        dynamicFont.FontData = ResourceLoader.Load<DynamicFontData>("res://Assets/font/BelweBoldBT.ttf");
+        nameFont = new DynamicFont();
+        nameFont.FontData = ResourceLoader.Load<DynamicFontData>("res://Assets/font/BelweBoldBT.ttf");
 
         // Modify the font properties
         
-        dynamicFont.OutlineSize = 2; // Set the outline size
-        dynamicFont.OutlineColor = new Color(0,0,0); // Set the outline color
-        dynamicFont.Size = 1; // Set the font size
+        nameFont.OutlineSize = 2; // Set the outline size
+        nameFont.OutlineColor = new Color(0,0,0); // Set the outline color
+        nameFont.Size = 1; // Set the font size
         // Apply the modified font to the label
-        nameLabel.AddFontOverride("font", dynamicFont);
+        nameLabel.AddFontOverride("font", nameFont);
         
         isInit = true;
         OnCardResized();
+    }
+
+    public void setType(CardType type)
+    {
+        if (type == CardType.MINION)
+        {
+            CardFrame.Texture = MinionCardImg;
+            currentMask = MinionCardMask;
+        }
+        else if (type == CardType.SPELL)
+        {
+            CardFrame.Texture = SpellCardImg;
+            currentMask = SpellCardMask;
+        }
     }
 
     public void setImage(Texture texture)
     {
         ShaderMaterial material = (ShaderMaterial)CardImg.Material.Duplicate();
         material.SetShaderParam("texture1", texture);
+        material.SetShaderParam("texture2", currentMask);
         CardImg.Material = material;
     }
 
@@ -53,7 +75,7 @@ public class CardMinion : Control
     {
         if (!isInit) return;
         int fontSize = (int) Math.Floor(namePlace.RectSize.y  * 72 / 96);
-        dynamicFont.Size = fontSize; 
+        nameFont.Size = fontSize; 
     }
 
     private Control createLabelPlace(Label label)

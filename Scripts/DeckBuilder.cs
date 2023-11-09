@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using SabberStoneCore.Enums;
 using SabberStoneCore.Model;
 
 public class CardInfo
@@ -12,6 +13,13 @@ public class CardInfo
     public string type { get; set; }
     public int cost { get; set; }
     public string cardClass { get; set; }
+
+    public CardType GetType()
+    {
+        if (type == "MINION") return CardType.MINION;
+        if (type == "SPELL") return CardType.SPELL;
+        return CardType.INVALID;
+    }
 }
 
 public enum Table
@@ -25,8 +33,7 @@ public class DeckBuilder : Control
     private VBoxContainer CardListTable;
     private VBoxContainer DeckListTable;
     private List<CardInfo> cardsJson;
-    private CardMinion cardMinion;
-    private CardSpell cardSpell;
+    private Card card;
 
     private Label cardCountLabel;
     private int cardCount = 0;
@@ -39,8 +46,7 @@ public class DeckBuilder : Control
         
         CardListTable = GetNode<VBoxContainer>("VBoxContainer/HBoxContainer/CardList/Table/Data/ScrollContainer/MarginContainer/TableData");
         DeckListTable = GetNode<VBoxContainer>("VBoxContainer/HBoxContainer/DeckList/Table/Data/ScrollContainer/MarginContainer/TableData");
-        cardMinion = GetNode<CardMinion>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards/CardMinion");
-        cardSpell = GetNode<CardSpell>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards/CardSpell");
+        card = GetNode<Card>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards/Card");
         cardCountLabel = GetNode<Label>("VBoxContainer/Panel/CardCountLabel");
         
         foreach (CardInfo card in cardsJson)
@@ -71,21 +77,9 @@ public class DeckBuilder : Control
     {
         string id = CardTableLine.selectedCard.id;
 
-        bool isCardMinion = CardTableLine.selectedCard.type == "MINION";
-        bool isCardSpell = CardTableLine.selectedCard.type == "SPELL";
-
-        cardMinion.Visible = isCardMinion;
-        cardSpell.Visible = isCardSpell;
-        
-        if (isCardMinion)
-        {
-            cardMinion.setImage(CardTableLine.selectedCard.image);
-            cardMinion.setName(CardTableLine.selectedCard.name);
-        }
-        else if (isCardSpell)
-        {
-            cardSpell.setImage(CardTableLine.selectedCard.image);
-        }
+        card.setType(CardTableLine.selectedCard.type);
+        card.setImage(CardTableLine.selectedCard.image);
+        card.setName(CardTableLine.selectedCard.name);
     }
 
     private void onAddCardButtonpressed()
@@ -120,13 +114,14 @@ public class DeckBuilder : Control
         Label typeLabel = instance.GetNode<Label>("HBoxContainer/Type");
         Label costLabel = instance.GetNode<Label>("HBoxContainer/Cost");
         Label classLabel = instance.GetNode<Label>("HBoxContainer/Class");
-        instance.id = card.id;
-        instance.name = card.name;
         nameLabel.Text = card.name;
         typeLabel.Text = card.type;
-        instance.type = card.type;
         costLabel.Text = card.cost.ToString();
         classLabel.Text = card.cardClass;
+        
+        instance.id = card.id;
+        instance.name = card.name;
+        instance.type = card.GetType();
         instance.table = table;
         instance.image = (Texture)ResourceLoader.Load("res://Assets/cards/" + card.id + ".jpg");
         return instance;

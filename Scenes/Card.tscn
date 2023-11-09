@@ -3,9 +3,9 @@
 [ext_resource path="res://Assets/sprite/inhand_minion_neutral_upscayl.png" type="Texture" id=1]
 [ext_resource path="res://Assets/shader/mask.tres" type="Material" id=2]
 [ext_resource path="res://Assets/cards/CS2_189.jpg" type="Texture" id=3]
-[ext_resource path="res://Scripts/CardMinion.cs" type="Script" id=4]
+[ext_resource path="res://Scripts/Card.cs" type="Script" id=4]
 
-[node name="CardMinion" type="Control"]
+[node name="Card" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
@@ -24,7 +24,7 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
-[node name="Card" type="TextureRect" parent="."]
+[node name="CardFrame" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_vertical = 3

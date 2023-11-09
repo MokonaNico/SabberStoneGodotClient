@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using SabberStoneCore.Enums;
 
 public class CardTableLine : ColorRect
 {
@@ -9,7 +10,7 @@ public class CardTableLine : ColorRect
     public static CardTableLine selectedCard;
     public string id;
     public string name;
-    public string type;
+    public CardType type;
     public Table table;
     public Texture image;
     

@@ -148,18 +148,12 @@ margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
 
-[node name="Cards" type="AspectRatioContainer" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
+[node name="Card" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 271.0
 margin_bottom = 341.0
 size_flags_vertical = 3
-ratio = 0.8
-
-[node name="Card" parent="DeckBuilder/VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 1.125
-margin_right = 271.0
-margin_bottom = 339.875
 MinionCardImg = ExtResource( 5 )
 SpellCardImg = ExtResource( 4 )
 MinionCardMask = ExtResource( 7 )

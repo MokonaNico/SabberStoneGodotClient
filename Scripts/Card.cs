@@ -4,41 +4,49 @@ using SabberStoneCore.Enums;
 
 public partial class Card : Control
 {
+    private class LabelHandler
+    {
+        public Label label { get; set; }
+        public Control place { get; set; }
+        public DynamicFont font { get; set; }
+    }
+    
     [Export] private Texture MinionCardImg;
     [Export] private Texture SpellCardImg;
 
     [Export] private Texture MinionCardMask;
     [Export] private Texture SpellCardMask;
-    
+
+    private Control cardTemplate;
     private TextureRect CardFrame;
     private Texture currentMask;
     private TextureRect CardImg;
     
     private Label nameLabel;
     private Control namePlace;
+    private DynamicFont nameFont = new DynamicFont();
 
-    private DynamicFont nameFont;
+    private Label manaLabel;
+    private Control manaPlace;
+    private DynamicFont manaFont = new DynamicFont();
     
     private bool isInit = false;
     
     public override void _Ready()
     {
-        CardFrame = GetNode<TextureRect>("CardFrame");
-        CardImg = GetNode<TextureRect>("CardImg");
-        nameLabel = GetNode<Label>("NameLabel");
+        cardTemplate = GetNode<Control>("CardTemplate");
+        CardFrame = GetNode<TextureRect>("CardTemplate/CardFrame");
+        CardImg = GetNode<TextureRect>("CardTemplate/CardImg");
+        
+        nameLabel = GetNode<Label>("CardTemplate/NameLabel");
         namePlace = createLabelPlace(nameLabel);
-        
-        // Load a font from the filesystem
-        nameFont = new DynamicFont();
-        nameFont.FontData = ResourceLoader.Load<DynamicFontData>("res://Assets/font/BelweBoldBT.ttf");
+        cardTemplate.AddChild(namePlace);
+        InitFont(nameFont, nameLabel);
 
-        // Modify the font properties
-        
-        nameFont.OutlineSize = 2; // Set the outline size
-        nameFont.OutlineColor = new Color(0,0,0); // Set the outline color
-        nameFont.Size = 1; // Set the font size
-        // Apply the modified font to the label
-        nameLabel.AddFontOverride("font", nameFont);
+        manaLabel = GetNode<Label>("CardTemplate/ManaLabel");
+        manaPlace = createLabelPlace(manaLabel);
+        cardTemplate.AddChild(manaPlace);
+        InitFont(manaFont, manaLabel);
         
         isInit = true;
         OnCardResized();
@@ -71,11 +79,16 @@ public partial class Card : Control
         nameLabel.Text = name;
     }
 
+    public void setCost(string mana)
+    {
+        manaLabel.Text = mana;
+    }
+
     public void OnCardResized()
     {
         if (!isInit) return;
-        int fontSize = (int) Math.Floor(namePlace.RectSize.y  * 72 / 96);
-        nameFont.Size = fontSize; 
+        nameFont.Size = (int) Math.Floor(namePlace.RectSize.y  * 72 / 96);
+        manaFont.Size = (int) Math.Floor(manaPlace.RectSize.y  * 72 / 96);
     }
 
     private Control createLabelPlace(Label label)
@@ -94,8 +107,20 @@ public partial class Card : Control
         place.MarginRight = label.MarginRight;
         place.MarginTop = label.MarginTop;
         place.Connect("resized",this,"OnCardResized");
-        
-        AddChild(place);
+
         return place;
+    }
+
+    private void InitFont(DynamicFont font, Label label)
+    {
+        // Load a font from the filesystem
+        font.FontData = ResourceLoader.Load<DynamicFontData>("res://Assets/font/BelweBoldBT.ttf");
+        
+        // Modify the font properties
+        font.OutlineSize = 2; // Set the outline size
+        font.OutlineColor = new Color(0,0,0); // Set the outline color
+        font.Size = 1; // Set the font size
+        // Apply the modified font to the label
+        label.AddFontOverride("font", font);
     }
 }

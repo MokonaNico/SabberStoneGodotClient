@@ -5,26 +5,31 @@
 [ext_resource path="res://Assets/cards/CS2_189.jpg" type="Texture" id=3]
 [ext_resource path="res://Scripts/Card.cs" type="Script" id=4]
 
-[node name="Card" type="Control"]
+[node name="Card" type="AspectRatioContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+ratio = 0.8
 script = ExtResource( 4 )
 
-[node name="CardImg" type="TextureRect" parent="."]
+[node name="CardTemplate" type="Control" parent="."]
+margin_left = 272.0
+margin_right = 752.0
+margin_bottom = 600.0
+
+[node name="CardImg" type="TextureRect" parent="CardTemplate"]
 material = ExtResource( 2 )
-anchor_left = 0.103
-anchor_top = 0.065
-anchor_right = 0.893
-anchor_bottom = 0.618
-margin_left = -0.101997
-margin_top = 0.0299988
-margin_right = 0.0379639
-margin_bottom = -1.884
+anchor_left = 0.1
+anchor_top = 0.0683333
+anchor_right = 0.898333
+anchor_bottom = 0.618333
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="CardFrame" type="TextureRect" parent="."]
+[node name="CardFrame" type="TextureRect" parent="CardTemplate"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_vertical = 3
@@ -33,12 +38,73 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="NameLabel" type="Label" parent="."]
-anchor_top = 0.53
-anchor_right = 1.00098
-anchor_bottom = 0.596667
+[node name="NameLabel" type="Label" parent="CardTemplate"]
+anchor_left = 0.18125
+anchor_top = 0.531667
+anchor_right = 0.8
+anchor_bottom = 0.595
 size_flags_vertical = 3
 text = "Elven Archer"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ManaLabel" type="Label" parent="CardTemplate"]
+anchor_left = 0.0583333
+anchor_top = 0.0416667
+anchor_right = 0.279167
+anchor_bottom = 0.248333
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ManaLabel_Spell" type="Label" parent="CardTemplate"]
+anchor_left = 0.110417
+anchor_top = 0.0416667
+anchor_right = 0.33125
+anchor_bottom = 0.248333
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="AttackLabel" type="Label" parent="CardTemplate"]
+anchor_left = 0.110417
+anchor_top = 0.851667
+anchor_right = 0.277083
+anchor_bottom = 0.976667
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HealthLabel" type="Label" parent="CardTemplate"]
+anchor_left = 0.745833
+anchor_top = 0.861667
+anchor_right = 0.891667
+anchor_bottom = 0.98
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextLabel" type="Label" parent="CardTemplate"]
+anchor_left = 0.26875
+anchor_top = 0.703333
+anchor_right = 0.7125
+anchor_bottom = 0.838333
+text = "Test"
 align = 1
 valign = 1
 __meta__ = {

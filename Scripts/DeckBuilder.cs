@@ -46,7 +46,7 @@ public class DeckBuilder : Control
         
         CardListTable = GetNode<VBoxContainer>("VBoxContainer/HBoxContainer/CardList/Table/Data/ScrollContainer/MarginContainer/TableData");
         DeckListTable = GetNode<VBoxContainer>("VBoxContainer/HBoxContainer/DeckList/Table/Data/ScrollContainer/MarginContainer/TableData");
-        card = GetNode<Card>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Cards/Card");
+        card = GetNode<Card>("VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/Card");
         cardCountLabel = GetNode<Label>("VBoxContainer/Panel/CardCountLabel");
         
         foreach (CardInfo card in cardsJson)
@@ -80,6 +80,7 @@ public class DeckBuilder : Control
         card.setType(CardTableLine.selectedCard.type);
         card.setImage(CardTableLine.selectedCard.image);
         card.setName(CardTableLine.selectedCard.name);
+        card.setCost(CardTableLine.selectedCard.cost);
     }
 
     private void onAddCardButtonpressed()
@@ -121,6 +122,7 @@ public class DeckBuilder : Control
         
         instance.id = card.id;
         instance.name = card.name;
+        instance.cost = card.cost.ToString();
         instance.type = card.GetType();
         instance.table = table;
         instance.image = (Texture)ResourceLoader.Load("res://Assets/cards/" + card.id + ".jpg");

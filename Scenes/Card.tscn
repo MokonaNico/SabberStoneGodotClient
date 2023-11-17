@@ -32,6 +32,8 @@ __meta__ = {
 [node name="CardFrame" type="TextureRect" parent="CardTemplate"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 2.0
+margin_bottom = 2.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 texture = ExtResource( 1 )
@@ -40,9 +42,9 @@ stretch_mode = 6
 
 [node name="NameLabel" type="Label" parent="CardTemplate"]
 anchor_left = 0.18125
-anchor_top = 0.531667
+anchor_top = 0.536667
 anchor_right = 0.8
-anchor_bottom = 0.595
+anchor_bottom = 0.6
 size_flags_vertical = 3
 text = "Elven Archer"
 align = 1
@@ -63,10 +65,10 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="ManaLabel_Spell" type="Label" parent="CardTemplate"]
-anchor_left = 0.110417
+[node name="ManaLabelSpell" type="Label" parent="CardTemplate"]
+anchor_left = 0.0770837
 anchor_top = 0.0416667
-anchor_right = 0.33125
+anchor_right = 0.297917
 anchor_bottom = 0.248333
 text = "1"
 align = 1
@@ -77,9 +79,9 @@ __meta__ = {
 
 [node name="AttackLabel" type="Label" parent="CardTemplate"]
 anchor_left = 0.110417
-anchor_top = 0.851667
+anchor_top = 0.816667
 anchor_right = 0.277083
-anchor_bottom = 0.976667
+anchor_bottom = 0.998333
 text = "1"
 align = 1
 valign = 1
@@ -88,10 +90,10 @@ __meta__ = {
 }
 
 [node name="HealthLabel" type="Label" parent="CardTemplate"]
-anchor_left = 0.745833
-anchor_top = 0.861667
-anchor_right = 0.891667
-anchor_bottom = 0.98
+anchor_left = 0.741667
+anchor_top = 0.823333
+anchor_right = 0.908333
+anchor_bottom = 1.005
 text = "1"
 align = 1
 valign = 1
@@ -100,13 +102,14 @@ __meta__ = {
 }
 
 [node name="TextLabel" type="Label" parent="CardTemplate"]
-anchor_left = 0.26875
-anchor_top = 0.703333
-anchor_right = 0.7125
+anchor_left = 0.222917
+anchor_top = 0.686667
+anchor_right = 0.754167
 anchor_bottom = 0.838333
-text = "Test"
+text = "AAA"
 align = 1
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": true
 }

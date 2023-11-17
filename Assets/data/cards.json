@@ -4,370 +4,529 @@
         "name": "Goldshire Footman",
         "type": "MINION",
         "cost": 1,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 1,
+        "health": 2,
+        "text": "<b>Taunt</b>"
     },
     {
         "id": "CS2_022",
         "name": "Polymorph",
         "type": "SPELL",
         "cost": 4,
-        "cardClass": "MAGE"
+        "cardClass": "MAGE",
+        "attack": 0,
+        "health": 0,
+        "text": "Transform a minion\ninto a 1/1 Sheep."
     },
     {
         "id": "CS2_023",
         "name": "Arcane Intellect",
         "type": "SPELL",
         "cost": 3,
-        "cardClass": "MAGE"
+        "cardClass": "MAGE",
+        "attack": 0,
+        "health": 0,
+        "text": "Draw 2 cards."
     },
     {
         "id": "CS2_024",
         "name": "Frostbolt",
         "type": "SPELL",
         "cost": 2,
-        "cardClass": "MAGE"
+        "cardClass": "MAGE",
+        "attack": 0,
+        "health": 0,
+        "text": "Deal $3 damage to a\u00a0character and <b>Freeze</b> it."
     },
     {
         "id": "CS2_025",
         "name": "Arcane Explosion",
         "type": "SPELL",
         "cost": 2,
-        "cardClass": "MAGE"
+        "cardClass": "MAGE",
+        "attack": 0,
+        "health": 0,
+        "text": "Deal $1 damage to all enemy minions."
     },
     {
         "id": "CS2_026",
         "name": "Frost Nova",
         "type": "SPELL",
         "cost": 3,
-        "cardClass": "MAGE"
+        "cardClass": "MAGE",
+        "attack": 0,
+        "health": 0,
+        "text": "<b>Freeze</b> all enemy minions."
     },
     {
         "id": "CS2_027",
         "name": "Mirror Image",
         "type": "SPELL",
         "cost": 1,
-        "cardClass": "MAGE"
+        "cardClass": "MAGE",
+        "attack": 0,
+        "health": 0,
+        "text": "Summon two 0/2 minions with <b>Taunt</b>."
     },
     {
         "id": "CS2_029",
         "name": "Fireball",
         "type": "SPELL",
         "cost": 4,
-        "cardClass": "MAGE"
+        "cardClass": "MAGE",
+        "attack": 0,
+        "health": 0,
+        "text": "Deal $6 damage."
     },
     {
         "id": "CS2_032",
         "name": "Flamestrike",
         "type": "SPELL",
         "cost": 7,
-        "cardClass": "MAGE"
+        "cardClass": "MAGE",
+        "attack": 0,
+        "health": 0,
+        "text": "Deal $5 damage to all enemy minions."
     },
     {
         "id": "CS2_033",
         "name": "Water Elemental",
         "type": "MINION",
         "cost": 4,
-        "cardClass": "MAGE"
+        "cardClass": "MAGE",
+        "attack": 3,
+        "health": 6,
+        "text": "<b>Freeze</b> any character damaged by this minion."
     },
     {
         "id": "CS2_118",
         "name": "Magma Rager",
         "type": "MINION",
         "cost": 3,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 5,
+        "health": 1,
+        "text": ""
     },
     {
         "id": "CS2_119",
         "name": "Oasis Snapjaw",
         "type": "MINION",
         "cost": 4,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 7,
+        "text": ""
     },
     {
         "id": "CS2_120",
         "name": "River Crocolisk",
         "type": "MINION",
         "cost": 2,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 3,
+        "text": ""
     },
     {
         "id": "CS2_121",
         "name": "Frostwolf Grunt",
         "type": "MINION",
         "cost": 2,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 2,
+        "text": "<b>Taunt</b>"
     },
     {
         "id": "CS2_122",
         "name": "Raid Leader",
         "type": "MINION",
         "cost": 3,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 3,
+        "text": "Your other minions have +1 Attack."
     },
     {
         "id": "CS2_124",
         "name": "Wolfrider",
         "type": "MINION",
         "cost": 3,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 3,
+        "health": 1,
+        "text": "<b>Charge</b>"
     },
     {
         "id": "CS2_125",
         "name": "Ironfur Grizzly",
         "type": "MINION",
         "cost": 3,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 3,
+        "health": 3,
+        "text": "<b>Taunt</b>"
     },
     {
         "id": "CS2_127",
         "name": "Silverback Patriarch",
         "type": "MINION",
         "cost": 3,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 1,
+        "health": 4,
+        "text": "<b>Taunt</b>"
     },
     {
         "id": "CS2_131",
         "name": "Stormwind Knight",
         "type": "MINION",
         "cost": 4,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 5,
+        "text": "<b>Charge</b>"
     },
     {
         "id": "CS2_141",
         "name": "Ironforge Rifleman",
         "type": "MINION",
         "cost": 3,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 2,
+        "text": "<b>Battlecry:</b> Deal 1 damage."
     },
     {
         "id": "CS2_142",
         "name": "Kobold Geomancer",
         "type": "MINION",
         "cost": 2,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 2,
+        "text": "<b>Spell Damage +1</b>"
     },
     {
         "id": "CS2_147",
         "name": "Gnomish Inventor",
         "type": "MINION",
         "cost": 4,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 4,
+        "text": "<b>Battlecry:</b> Draw a card."
     },
     {
         "id": "CS2_150",
         "name": "Stormpike Commando",
         "type": "MINION",
         "cost": 5,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 4,
+        "health": 2,
+        "text": "<b>Battlecry:</b> Deal 2 damage."
     },
     {
         "id": "CS2_155",
         "name": "Archmage",
         "type": "MINION",
         "cost": 6,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 4,
+        "health": 7,
+        "text": "<b>Spell Damage +1</b>"
     },
     {
         "id": "CS2_162",
         "name": "Lord of the Arena",
         "type": "MINION",
         "cost": 6,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 6,
+        "health": 5,
+        "text": "<b>Taunt</b>"
     },
     {
         "id": "CS2_168",
         "name": "Murloc Raider",
         "type": "MINION",
         "cost": 1,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 1,
+        "text": ""
     },
     {
         "id": "CS2_171",
         "name": "Stonetusk Boar",
         "type": "MINION",
         "cost": 1,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 1,
+        "health": 1,
+        "text": "<b>Charge</b>"
     },
     {
         "id": "CS2_172",
         "name": "Bloodfen Raptor",
         "type": "MINION",
         "cost": 2,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 3,
+        "health": 2,
+        "text": ""
     },
     {
         "id": "CS2_173",
         "name": "Bluegill Warrior",
         "type": "MINION",
         "cost": 2,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 1,
+        "text": "<b>Charge</b>"
     },
     {
         "id": "CS2_179",
         "name": "Sen'jin Shieldmasta",
         "type": "MINION",
         "cost": 4,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 3,
+        "health": 5,
+        "text": "<b>Taunt</b>"
     },
     {
         "id": "CS2_182",
         "name": "Chillwind Yeti",
         "type": "MINION",
         "cost": 4,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 4,
+        "health": 5,
+        "text": ""
     },
     {
         "id": "CS2_186",
         "name": "War Golem",
         "type": "MINION",
         "cost": 7,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 7,
+        "health": 7,
+        "text": ""
     },
     {
         "id": "CS2_187",
         "name": "Booty Bay Bodyguard",
         "type": "MINION",
         "cost": 5,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 5,
+        "health": 4,
+        "text": "<b>Taunt</b>"
     },
     {
         "id": "CS2_189",
         "name": "Elven Archer",
         "type": "MINION",
         "cost": 1,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 1,
+        "health": 1,
+        "text": "<b>Battlecry:</b> Deal 1 damage."
     },
     {
         "id": "CS2_196",
         "name": "Razorfen Hunter",
         "type": "MINION",
         "cost": 3,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 3,
+        "text": "<b>Battlecry:</b> Summon a 1/1\u00a0Boar."
     },
     {
         "id": "CS2_197",
         "name": "Ogre Magi",
         "type": "MINION",
         "cost": 4,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 4,
+        "health": 4,
+        "text": "<b>Spell Damage +1</b>"
     },
     {
         "id": "CS2_200",
         "name": "Boulderfist Ogre",
         "type": "MINION",
         "cost": 6,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 6,
+        "health": 7,
+        "text": ""
     },
     {
         "id": "CS2_201",
         "name": "Core Hound",
         "type": "MINION",
         "cost": 7,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 9,
+        "health": 5,
+        "text": ""
     },
     {
         "id": "CS2_213",
         "name": "Reckless Rocketeer",
         "type": "MINION",
         "cost": 6,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 5,
+        "health": 2,
+        "text": "<b>Charge</b>"
     },
     {
         "id": "CS2_222",
         "name": "Stormwind Champion",
         "type": "MINION",
         "cost": 7,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 7,
+        "health": 7,
+        "text": "Your other minions have +1/+1."
     },
     {
         "id": "CS2_226",
         "name": "Frostwolf Warlord",
         "type": "MINION",
         "cost": 5,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 4,
+        "health": 4,
+        "text": "<b>Battlecry:</b> Gain +1/+1 for each other friendly minion on the battlefield."
     },
     {
         "id": "DS1_055",
         "name": "Darkscale Healer",
         "type": "MINION",
         "cost": 5,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 4,
+        "health": 5,
+        "text": "<b>Battlecry:</b> Restore #2 Health to all friendly characters."
     },
     {
         "id": "EX1_011",
         "name": "Voodoo Doctor",
         "type": "MINION",
         "cost": 1,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 1,
+        "text": "<b>Battlecry:</b> Restore #2\u00a0Health."
     },
     {
         "id": "EX1_015",
         "name": "Novice Engineer",
         "type": "MINION",
         "cost": 2,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 1,
+        "health": 1,
+        "text": "<b>Battlecry:</b> Draw a card."
     },
     {
         "id": "EX1_019",
         "name": "Shattered Sun Cleric",
         "type": "MINION",
         "cost": 3,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 3,
+        "health": 2,
+        "text": "<b>Battlecry:</b> Give a friendly minion +1/+1."
     },
     {
         "id": "EX1_025",
         "name": "Dragonling Mechanic",
         "type": "MINION",
         "cost": 4,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 4,
+        "text": "<b>Battlecry:</b> Summon a 2/1 Mechanical Dragonling."
     },
     {
         "id": "EX1_066",
         "name": "Acidic Swamp Ooze",
         "type": "MINION",
         "cost": 2,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 3,
+        "health": 2,
+        "text": "<b>Battlecry:</b> Destroy your opponent's weapon."
     },
     {
         "id": "EX1_277",
         "name": "Arcane Missiles",
         "type": "SPELL",
         "cost": 1,
-        "cardClass": "MAGE"
+        "cardClass": "MAGE",
+        "attack": 0,
+        "health": 0,
+        "text": "Deal $3 damage randomly split among all enemies."
     },
     {
         "id": "EX1_399",
         "name": "Gurubashi Berserker",
         "type": "MINION",
         "cost": 5,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 8,
+        "text": "Whenever this minion takes damage, gain +3\u00a0Attack."
     },
     {
         "id": "EX1_506",
         "name": "Murloc Tidehunter",
         "type": "MINION",
         "cost": 2,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 2,
+        "health": 1,
+        "text": "<b>Battlecry:</b> Summon a 1/1\u00a0Murloc Scout."
     },
     {
         "id": "EX1_508",
         "name": "Grimscale Oracle",
         "type": "MINION",
         "cost": 1,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 1,
+        "health": 1,
+        "text": "Your other Murlocs have +1 Attack."
     },
     {
         "id": "EX1_582",
         "name": "Dalaran Mage",
         "type": "MINION",
         "cost": 3,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 1,
+        "health": 4,
+        "text": "<b>Spell Damage +1</b>"
     },
     {
         "id": "EX1_593",
         "name": "Nightblade",
         "type": "MINION",
         "cost": 5,
-        "cardClass": "NEUTRAL"
+        "cardClass": "NEUTRAL",
+        "attack": 4,
+        "health": 4,
+        "text": "<b>Battlecry: </b>Deal 3 damage to the enemy hero."
     }
 ]

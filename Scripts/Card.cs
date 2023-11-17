@@ -1,15 +1,36 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using SabberStoneCore.Enums;
 
 public partial class Card : Control
 {
     private class LabelHandler
     {
+        public enum Type
+        {
+            MINION,
+            SPELL,
+            BOTH
+        };
+
+        public LabelHandler(Label _label, Control _place, DynamicFont _font, float _fontSize, Type _type)
+        {
+            label = _label;
+            place = _place;
+            font = _font;
+            fontSize = _fontSize;
+            type = _type;
+        }
+        
         public Label label { get; set; }
         public Control place { get; set; }
         public DynamicFont font { get; set; }
+        public float fontSize { get; set; }
+        public Type type { get; set; }
     }
+
+    private Dictionary<string, LabelHandler> labelDict = new Dictionary<string, LabelHandler>();
     
     [Export] private Texture MinionCardImg;
     [Export] private Texture SpellCardImg;
@@ -22,34 +43,59 @@ public partial class Card : Control
     private Texture currentMask;
     private TextureRect CardImg;
     
-    private Label nameLabel;
-    private Control namePlace;
-    private DynamicFont nameFont = new DynamicFont();
-
-    private Label manaLabel;
-    private Control manaPlace;
-    private DynamicFont manaFont = new DynamicFont();
-    
     private bool isInit = false;
+
+    private DynamicFont BelweFont = new DynamicFont();
+    private DynamicFont UniversFont = new DynamicFont();
     
     public override void _Ready()
     {
+        InitFont();
+        
         cardTemplate = GetNode<Control>("CardTemplate");
         CardFrame = GetNode<TextureRect>("CardTemplate/CardFrame");
         CardImg = GetNode<TextureRect>("CardTemplate/CardImg");
         
-        nameLabel = GetNode<Label>("CardTemplate/NameLabel");
-        namePlace = createLabelPlace(nameLabel);
-        cardTemplate.AddChild(namePlace);
-        InitFont(nameFont, nameLabel);
+        addNewCardToDict("CardTemplate/NameLabel", "name", BelweFont, 1.0f, LabelHandler.Type.BOTH);
+        addNewCardToDict("CardTemplate/ManaLabel", "mana", BelweFont, 1.0f, LabelHandler.Type.MINION);
+        addNewCardToDict("CardTemplate/ManaLabelSpell", "manaSpell", BelweFont, 1.0f, LabelHandler.Type.SPELL);
+        addNewCardToDict("CardTemplate/AttackLabel", "attack", BelweFont, 1.0f, LabelHandler.Type.MINION);
+        addNewCardToDict("CardTemplate/HealthLabel", "health", BelweFont, 1.0f, LabelHandler.Type.MINION);
+        addNewCardToDict("CardTemplate/TextLabel", "text", UniversFont, 0.35f, LabelHandler.Type.BOTH);
 
-        manaLabel = GetNode<Label>("CardTemplate/ManaLabel");
-        manaPlace = createLabelPlace(manaLabel);
-        cardTemplate.AddChild(manaPlace);
-        InitFont(manaFont, manaLabel);
-        
         isInit = true;
         OnCardResized();
+    }
+
+    private void InitFont()
+    {
+        BelweFont.FontData = ResourceLoader.Load<DynamicFontData>("res://Assets/font/BelweBoldBT.ttf");
+        BelweFont.OutlineSize = 2; 
+        BelweFont.OutlineColor = new Color(0,0,0); 
+        BelweFont.Size = 1;
+        
+        UniversFont.FontData = ResourceLoader.Load<DynamicFontData>("res://Assets/font/univers.otf");
+        UniversFont.Size = 1;
+    }
+
+    private DynamicFont GetCopy(DynamicFont _font)
+    {
+        DynamicFont res = new DynamicFont();
+        res.FontData = _font.FontData;
+        res.OutlineSize = _font.OutlineSize;
+        res.OutlineColor = _font.OutlineColor;
+        res.Size = _font.Size;
+        return res;
+    }
+
+    private void addNewCardToDict(string nodePath, string key, DynamicFont _font, float fontSize, LabelHandler.Type type)
+    {
+        Label label = GetNode<Label>(nodePath);
+        Control place = createLabelPlace(label);
+        cardTemplate.AddChild(place);
+        DynamicFont font = GetCopy(_font);
+        label.AddFontOverride("font", font);
+        labelDict.Add(key, new LabelHandler(label, place, font, fontSize, type));
     }
 
     public void setType(CardType type)
@@ -64,6 +110,22 @@ public partial class Card : Control
             CardFrame.Texture = SpellCardImg;
             currentMask = SpellCardMask;
         }
+        
+        foreach (LabelHandler labelHandler in labelDict.Values)
+        {
+            labelHandler.label.Visible = false;
+            
+            if (labelHandler.type == LabelHandler.Type.BOTH)
+            {
+                labelHandler.label.Visible = true;
+                continue;
+            }
+            
+            if (type == CardType.MINION && labelHandler.type == LabelHandler.Type.MINION)
+                labelHandler.label.Visible = true;
+            if (type == CardType.SPELL && labelHandler.type == LabelHandler.Type.SPELL)
+                labelHandler.label.Visible = true;
+        }
     }
 
     public void setImage(Texture texture)
@@ -76,19 +138,37 @@ public partial class Card : Control
 
     public void setName(string name)
     {
-        nameLabel.Text = name;
+        labelDict["name"].label.Text = name;
     }
 
     public void setCost(string mana)
     {
-        manaLabel.Text = mana;
+        labelDict["mana"].label.Text = mana;
+        labelDict["manaSpell"].label.Text = mana;
+    }
+
+    public void setAttack(string attack)
+    {
+        labelDict["attack"].label.Text = attack;
+    }
+
+    public void setHealth(string health)
+    {
+        labelDict["health"].label.Text = health;
+    }
+
+    public void setText(string text)
+    {
+        labelDict["text"].label.Text = text;
     }
 
     public void OnCardResized()
     {
         if (!isInit) return;
-        nameFont.Size = (int) Math.Floor(namePlace.RectSize.y  * 72 / 96);
-        manaFont.Size = (int) Math.Floor(manaPlace.RectSize.y  * 72 / 96);
+        foreach (LabelHandler labelHandler in labelDict.Values)
+        {
+            labelHandler.font.Size = (int) Math.Floor(labelHandler.place.RectSize.y  * 72 / 96 * labelHandler.fontSize);
+        }
     }
 
     private Control createLabelPlace(Label label)
@@ -110,17 +190,5 @@ public partial class Card : Control
 
         return place;
     }
-
-    private void InitFont(DynamicFont font, Label label)
-    {
-        // Load a font from the filesystem
-        font.FontData = ResourceLoader.Load<DynamicFontData>("res://Assets/font/BelweBoldBT.ttf");
-        
-        // Modify the font properties
-        font.OutlineSize = 2; // Set the outline size
-        font.OutlineColor = new Color(0,0,0); // Set the outline color
-        font.Size = 1; // Set the font size
-        // Apply the modified font to the label
-        label.AddFontOverride("font", font);
-    }
+    
 }

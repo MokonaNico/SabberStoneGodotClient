@@ -13,6 +13,9 @@ public class CardInfo
     public string type { get; set; }
     public int cost { get; set; }
     public string cardClass { get; set; }
+    public int attack { get; set; }
+    public int health { get; set; }
+    public string text { get; set; }
 
     public CardType GetType()
     {
@@ -81,6 +84,9 @@ public class DeckBuilder : Control
         card.setImage(CardTableLine.selectedCard.image);
         card.setName(CardTableLine.selectedCard.name);
         card.setCost(CardTableLine.selectedCard.cost);
+        card.setAttack(CardTableLine.selectedCard.attack);
+        card.setHealth(CardTableLine.selectedCard.health);
+        card.setText(CardTableLine.selectedCard.text);
     }
 
     private void onAddCardButtonpressed()
@@ -123,6 +129,9 @@ public class DeckBuilder : Control
         instance.id = card.id;
         instance.name = card.name;
         instance.cost = card.cost.ToString();
+        instance.attack = card.attack.ToString();
+        instance.health = card.health.ToString();
+        instance.text = card.text;
         instance.type = card.GetType();
         instance.table = table;
         instance.image = (Texture)ResourceLoader.Load("res://Assets/cards/" + card.id + ".jpg");

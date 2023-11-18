@@ -46,7 +46,11 @@ public partial class Card : Control
     private bool isInit = false;
 
     private DynamicFont BelweFont = new DynamicFont();
-    private DynamicFont UniversFont = new DynamicFont();
+    private DynamicFont LibreFranklinRegular = new DynamicFont();
+    private DynamicFont LibreFranklinBold = new DynamicFont();
+
+    private RichTextLabel TextLabel;
+    private Control TextPlace;
     
     public override void _Ready()
     {
@@ -55,14 +59,21 @@ public partial class Card : Control
         cardTemplate = GetNode<Control>("CardTemplate");
         CardFrame = GetNode<TextureRect>("CardTemplate/CardFrame");
         CardImg = GetNode<TextureRect>("CardTemplate/CardImg");
+        TextLabel = GetNode<RichTextLabel>("CardTemplate/TextLabel");
+        TextPlace = createLabelPlace(TextLabel);
+        cardTemplate.AddChild(TextPlace);
+        
+        TextLabel.AddFontOverride("normal_font", LibreFranklinRegular);
+        TextLabel.AddFontOverride("bold_font", LibreFranklinBold);
         
         addNewCardToDict("CardTemplate/NameLabel", "name", BelweFont, 1.0f, LabelHandler.Type.BOTH);
         addNewCardToDict("CardTemplate/ManaLabel", "mana", BelweFont, 1.0f, LabelHandler.Type.MINION);
         addNewCardToDict("CardTemplate/ManaLabelSpell", "manaSpell", BelweFont, 1.0f, LabelHandler.Type.SPELL);
         addNewCardToDict("CardTemplate/AttackLabel", "attack", BelweFont, 1.0f, LabelHandler.Type.MINION);
         addNewCardToDict("CardTemplate/HealthLabel", "health", BelweFont, 1.0f, LabelHandler.Type.MINION);
-        addNewCardToDict("CardTemplate/TextLabel", "text", UniversFont, 0.35f, LabelHandler.Type.BOTH);
 
+        TextLabel.BbcodeText = "[b]Battlecry:[/b] Deal 1 damage";
+        
         isInit = true;
         OnCardResized();
     }
@@ -74,8 +85,11 @@ public partial class Card : Control
         BelweFont.OutlineColor = new Color(0,0,0); 
         BelweFont.Size = 1;
         
-        UniversFont.FontData = ResourceLoader.Load<DynamicFontData>("res://Assets/font/univers.otf");
-        UniversFont.Size = 1;
+        LibreFranklinRegular.FontData = ResourceLoader.Load<DynamicFontData>("res://Assets/font/LibreFranklin-Regular.ttf");
+        LibreFranklinRegular.Size = 1;
+        
+        LibreFranklinBold.FontData = ResourceLoader.Load<DynamicFontData>("res://Assets/font/LibreFranklin-Bold.ttf");
+        LibreFranklinBold.Size = 1;
     }
 
     private DynamicFont GetCopy(DynamicFont _font)
@@ -159,7 +173,7 @@ public partial class Card : Control
 
     public void setText(string text)
     {
-        labelDict["text"].label.Text = text;
+        TextLabel.BbcodeText = "[center]"+text+"[/center]";
     }
 
     public void OnCardResized()
@@ -169,9 +183,11 @@ public partial class Card : Control
         {
             labelHandler.font.Size = (int) Math.Floor(labelHandler.place.RectSize.y  * 72 / 96 * labelHandler.fontSize);
         }
+        LibreFranklinRegular.Size = (int) Math.Floor(TextPlace.RectSize.y  * 72 / 96);
+        LibreFranklinBold.Size = (int) Math.Floor(TextPlace.RectSize.y  * 72 / 96);
     }
 
-    private Control createLabelPlace(Label label)
+    private Control createLabelPlace(Control label)
     {
         Control place = new Control();
 

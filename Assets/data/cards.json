@@ -7,7 +7,7 @@
         "cardClass": "NEUTRAL",
         "attack": 1,
         "health": 2,
-        "text": "<b>Taunt</b>"
+        "text": "[b]Taunt[/b]"
     },
     {
         "id": "CS2_022",
@@ -37,7 +37,7 @@
         "cardClass": "MAGE",
         "attack": 0,
         "health": 0,
-        "text": "Deal $3 damage to a\u00a0character and <b>Freeze</b> it."
+        "text": "Deal 3 damage to a\u00a0character and [b]Freeze[/b] it."
     },
     {
         "id": "CS2_025",
@@ -47,7 +47,7 @@
         "cardClass": "MAGE",
         "attack": 0,
         "health": 0,
-        "text": "Deal $1 damage to all enemy minions."
+        "text": "Deal 1 damage to all enemy minions."
     },
     {
         "id": "CS2_026",
@@ -57,7 +57,7 @@
         "cardClass": "MAGE",
         "attack": 0,
         "health": 0,
-        "text": "<b>Freeze</b> all enemy minions."
+        "text": "[b]Freeze[/b] all enemy minions."
     },
     {
         "id": "CS2_027",
@@ -67,7 +67,7 @@
         "cardClass": "MAGE",
         "attack": 0,
         "health": 0,
-        "text": "Summon two 0/2 minions with <b>Taunt</b>."
+        "text": "Summon two 0/2 minions with [b]Taunt[/b]."
     },
     {
         "id": "CS2_029",
@@ -77,7 +77,7 @@
         "cardClass": "MAGE",
         "attack": 0,
         "health": 0,
-        "text": "Deal $6 damage."
+        "text": "Deal 6 damage."
     },
     {
         "id": "CS2_032",
@@ -87,7 +87,7 @@
         "cardClass": "MAGE",
         "attack": 0,
         "health": 0,
-        "text": "Deal $5 damage to all enemy minions."
+        "text": "Deal 5 damage to all enemy minions."
     },
     {
         "id": "CS2_033",
@@ -97,7 +97,7 @@
         "cardClass": "MAGE",
         "attack": 3,
         "health": 6,
-        "text": "<b>Freeze</b> any character damaged by this minion."
+        "text": "[b]Freeze[/b] any character damaged by this minion."
     },
     {
         "id": "CS2_118",
@@ -137,7 +137,7 @@
         "cardClass": "NEUTRAL",
         "attack": 2,
         "health": 2,
-        "text": "<b>Taunt</b>"
+        "text": "[b]Taunt[/b]"
     },
     {
         "id": "CS2_122",
@@ -157,7 +157,7 @@
         "cardClass": "NEUTRAL",
         "attack": 3,
         "health": 1,
-        "text": "<b>Charge</b>"
+        "text": "[b]Charge[/b]"
     },
     {
         "id": "CS2_125",
@@ -167,7 +167,7 @@
         "cardClass": "NEUTRAL",
         "attack": 3,
         "health": 3,
-        "text": "<b>Taunt</b>"
+        "text": "[b]Taunt[/b]"
     },
     {
         "id": "CS2_127",
@@ -177,7 +177,7 @@
         "cardClass": "NEUTRAL",
         "attack": 1,
         "health": 4,
-        "text": "<b>Taunt</b>"
+        "text": "[b]Taunt[/b]"
     },
     {
         "id": "CS2_131",
@@ -187,7 +187,7 @@
         "cardClass": "NEUTRAL",
         "attack": 2,
         "health": 5,
-        "text": "<b>Charge</b>"
+        "text": "[b]Charge[/b]"
     },
     {
         "id": "CS2_141",
@@ -197,7 +197,7 @@
         "cardClass": "NEUTRAL",
         "attack": 2,
         "health": 2,
-        "text": "<b>Battlecry:</b> Deal 1 damage."
+        "text": "[b]Battlecry:[/b] Deal 1 damage."
     },
     {
         "id": "CS2_142",
@@ -207,7 +207,7 @@
         "cardClass": "NEUTRAL",
         "attack": 2,
         "health": 2,
-        "text": "<b>Spell Damage +1</b>"
+        "text": "[b]Spell Damage +1[/b]"
     },
     {
         "id": "CS2_147",
@@ -217,7 +217,7 @@
         "cardClass": "NEUTRAL",
         "attack": 2,
         "health": 4,
-        "text": "<b>Battlecry:</b> Draw a card."
+        "text": "[b]Battlecry:[/b] Draw a card."
     },
     {
         "id": "CS2_150",
@@ -227,7 +227,7 @@
         "cardClass": "NEUTRAL",
         "attack": 4,
         "health": 2,
-        "text": "<b>Battlecry:</b> Deal 2 damage."
+        "text": "[b]Battlecry:[/b] Deal 2 damage."
     },
     {
         "id": "CS2_155",
@@ -237,7 +237,7 @@
         "cardClass": "NEUTRAL",
         "attack": 4,
         "health": 7,
-        "text": "<b>Spell Damage +1</b>"
+        "text": "[b]Spell Damage +1[/b]"
     },
     {
         "id": "CS2_162",
@@ -247,7 +247,7 @@
         "cardClass": "NEUTRAL",
         "attack": 6,
         "health": 5,
-        "text": "<b>Taunt</b>"
+        "text": "[b]Taunt[/b]"
     },
     {
         "id": "CS2_168",
@@ -267,7 +267,7 @@
         "cardClass": "NEUTRAL",
         "attack": 1,
         "health": 1,
-        "text": "<b>Charge</b>"
+        "text": "[b]Charge[/b]"
     },
     {
         "id": "CS2_172",
@@ -287,7 +287,7 @@
         "cardClass": "NEUTRAL",
         "attack": 2,
         "health": 1,
-        "text": "<b>Charge</b>"
+        "text": "[b]Charge[/b]"
     },
     {
         "id": "CS2_179",
@@ -297,7 +297,7 @@
         "cardClass": "NEUTRAL",
         "attack": 3,
         "health": 5,
-        "text": "<b>Taunt</b>"
+        "text": "[b]Taunt[/b]"
     },
     {
         "id": "CS2_182",
@@ -327,7 +327,7 @@
         "cardClass": "NEUTRAL",
         "attack": 5,
         "health": 4,
-        "text": "<b>Taunt</b>"
+        "text": "[b]Taunt[/b]"
     },
     {
         "id": "CS2_189",
@@ -337,7 +337,7 @@
         "cardClass": "NEUTRAL",
         "attack": 1,
         "health": 1,
-        "text": "<b>Battlecry:</b> Deal 1 damage."
+        "text": "[b]Battlecry:[/b] Deal 1 damage."
     },
     {
         "id": "CS2_196",
@@ -347,7 +347,7 @@
         "cardClass": "NEUTRAL",
         "attack": 2,
         "health": 3,
-        "text": "<b>Battlecry:</b> Summon a 1/1\u00a0Boar."
+        "text": "[b]Battlecry:[/b] Summon a 1/1\u00a0Boar."
     },
     {
         "id": "CS2_197",
@@ -357,7 +357,7 @@
         "cardClass": "NEUTRAL",
         "attack": 4,
         "health": 4,
-        "text": "<b>Spell Damage +1</b>"
+        "text": "[b]Spell Damage +1[/b]"
     },
     {
         "id": "CS2_200",
@@ -387,7 +387,7 @@
         "cardClass": "NEUTRAL",
         "attack": 5,
         "health": 2,
-        "text": "<b>Charge</b>"
+        "text": "[b]Charge[/b]"
     },
     {
         "id": "CS2_222",
@@ -407,7 +407,7 @@
         "cardClass": "NEUTRAL",
         "attack": 4,
         "health": 4,
-        "text": "<b>Battlecry:</b> Gain +1/+1 for each other friendly minion on the battlefield."
+        "text": "[b]Battlecry:[/b] Gain +1/+1 for each other friendly minion on the battlefield."
     },
     {
         "id": "DS1_055",
@@ -417,7 +417,7 @@
         "cardClass": "NEUTRAL",
         "attack": 4,
         "health": 5,
-        "text": "<b>Battlecry:</b> Restore #2 Health to all friendly characters."
+        "text": "[b]Battlecry:[/b] Restore 2 Health to all friendly characters."
     },
     {
         "id": "EX1_011",
@@ -427,7 +427,7 @@
         "cardClass": "NEUTRAL",
         "attack": 2,
         "health": 1,
-        "text": "<b>Battlecry:</b> Restore #2\u00a0Health."
+        "text": "[b]Battlecry:[/b] Restore 2\u00a0Health."
     },
     {
         "id": "EX1_015",
@@ -437,7 +437,7 @@
         "cardClass": "NEUTRAL",
         "attack": 1,
         "health": 1,
-        "text": "<b>Battlecry:</b> Draw a card."
+        "text": "[b]Battlecry:[/b] Draw a card."
     },
     {
         "id": "EX1_019",
@@ -447,7 +447,7 @@
         "cardClass": "NEUTRAL",
         "attack": 3,
         "health": 2,
-        "text": "<b>Battlecry:</b> Give a friendly minion +1/+1."
+        "text": "[b]Battlecry:[/b] Give a friendly minion +1/+1."
     },
     {
         "id": "EX1_025",
@@ -457,7 +457,7 @@
         "cardClass": "NEUTRAL",
         "attack": 2,
         "health": 4,
-        "text": "<b>Battlecry:</b> Summon a 2/1 Mechanical Dragonling."
+        "text": "[b]Battlecry:[/b] Summon a 2/1 Mechanical Dragonling."
     },
     {
         "id": "EX1_066",
@@ -467,7 +467,7 @@
         "cardClass": "NEUTRAL",
         "attack": 3,
         "health": 2,
-        "text": "<b>Battlecry:</b> Destroy your opponent's weapon."
+        "text": "[b]Battlecry:[/b] Destroy your opponent's weapon."
     },
     {
         "id": "EX1_277",
@@ -477,7 +477,7 @@
         "cardClass": "MAGE",
         "attack": 0,
         "health": 0,
-        "text": "Deal $3 damage randomly split among all enemies."
+        "text": "Deal 3 damage randomly split among all enemies."
     },
     {
         "id": "EX1_399",
@@ -497,7 +497,7 @@
         "cardClass": "NEUTRAL",
         "attack": 2,
         "health": 1,
-        "text": "<b>Battlecry:</b> Summon a 1/1\u00a0Murloc Scout."
+        "text": "[b]Battlecry:[/b] Summon a 1/1\u00a0Murloc Scout."
     },
     {
         "id": "EX1_508",
@@ -517,7 +517,7 @@
         "cardClass": "NEUTRAL",
         "attack": 1,
         "health": 4,
-        "text": "<b>Spell Damage +1</b>"
+        "text": "[b]Spell Damage +1[/b]"
     },
     {
         "id": "EX1_593",
@@ -527,6 +527,6 @@
         "cardClass": "NEUTRAL",
         "attack": 4,
         "health": 4,
-        "text": "<b>Battlecry: </b>Deal 3 damage to the enemy hero."
+        "text": "[b]Battlecry: [/b]Deal 3 damage to the enemy hero."
     }
 ]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/sprite/inhand_minion_neutral_withrace.png" type="Texture" id=1]
+[ext_resource path="res://Assets/sprite/inhand_minion_neutral.png" type="Texture" id=1]
 [ext_resource path="res://Assets/shader/mask.tres" type="Material" id=2]
 [ext_resource path="res://Assets/cards/CS2_189.jpg" type="Texture" id=3]
 [ext_resource path="res://Scripts/Card.cs" type="Script" id=4]
@@ -58,6 +58,19 @@ anchor_left = 0.33125
 anchor_top = 0.893333
 anchor_right = 0.670833
 anchor_bottom = 0.941667
+size_flags_vertical = 3
+text = "RACE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="SchoolLabel" type="Label" parent="CardTemplate"]
+anchor_left = 0.327083
+anchor_top = 0.905
+anchor_right = 0.666666
+anchor_bottom = 0.953334
 size_flags_vertical = 3
 text = "RACE"
 align = 1

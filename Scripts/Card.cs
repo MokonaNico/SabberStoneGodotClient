@@ -31,10 +31,10 @@ public partial class Card : Control
     }
 
     private Dictionary<string, LabelHandler> labelDict = new Dictionary<string, LabelHandler>();
-    
-    [Export] private Texture MinionCardImg;
-    [Export] private Texture MinionCardImgWithRace;
-    [Export] private Texture SpellCardImg;
+
+    // First 4 are neutral and 4 next are mage
+    // In this order : minion, minion with race, spell, spell with school
+    [Export] private List<Texture> CardBorderImgs;
 
     [Export] private Texture MinionCardMask;
     [Export] private Texture SpellCardMask;
@@ -72,7 +72,8 @@ public partial class Card : Control
         addNewCardToDict("CardTemplate/ManaLabelSpell", "manaSpell", BelweFont, 1.0f, LabelHandler.Type.SPELL);
         addNewCardToDict("CardTemplate/AttackLabel", "attack", BelweFont, 1.0f, LabelHandler.Type.MINION);
         addNewCardToDict("CardTemplate/HealthLabel", "health", BelweFont, 1.0f, LabelHandler.Type.MINION);
-        addNewCardToDict("CardTemplate/RaceLabel", "race", BelweFont, 1.0f, LabelHandler.Type.BOTH);
+        addNewCardToDict("CardTemplate/RaceLabel", "race", BelweFont, 1.0f, LabelHandler.Type.MINION);
+        addNewCardToDict("CardTemplate/SchoolLabel", "school", BelweFont, 1.0f, LabelHandler.Type.SPELL);
 
         TextLabel.BbcodeText = "[b]Battlecry:[/b] Deal 1 damage";
         
@@ -114,23 +115,30 @@ public partial class Card : Control
         labelDict.Add(key, new LabelHandler(label, place, font, fontSize, type));
     }
 
-    public void setTypeAndRace(CardType type, string race)
+    public void setCardInfo(CardInfo cardInfo)
     {
-        labelDict["race"].label.Text = race;
+        labelDict["race"].label.Text = cardInfo.race;
+        labelDict["school"].label.Text = cardInfo.spellSchool;
         
-        if (type == CardType.MINION)
+        int baseIndex = -1;
+        if (cardInfo.cardClass == "NEUTRAL")
+            baseIndex = 0;
+        else if (cardInfo.cardClass == "MAGE")
+            baseIndex = 4;
+        
+        if (cardInfo.GetType() == CardType.MINION)
         {
-            if (race.Empty())
-                CardFrame.Texture = MinionCardImg;
-            else
-                CardFrame.Texture = MinionCardImgWithRace;
+            if (!cardInfo.race.Empty()) baseIndex++;
             currentMask = MinionCardMask;
         }
-        else if (type == CardType.SPELL)
+        else if (cardInfo.GetType() == CardType.SPELL)
         {
-            CardFrame.Texture = SpellCardImg;
+            baseIndex = baseIndex + 2;
+            if (!cardInfo.spellSchool.Empty()) baseIndex++;
             currentMask = SpellCardMask;
         }
+
+        CardFrame.Texture = CardBorderImgs[baseIndex];
         
         foreach (LabelHandler labelHandler in labelDict.Values)
         {
@@ -142,11 +150,18 @@ public partial class Card : Control
                 continue;
             }
             
-            if (type == CardType.MINION && labelHandler.type == LabelHandler.Type.MINION)
+            if (cardInfo.GetType() == CardType.MINION && labelHandler.type == LabelHandler.Type.MINION)
                 labelHandler.label.Visible = true;
-            if (type == CardType.SPELL && labelHandler.type == LabelHandler.Type.SPELL)
+            if (cardInfo.GetType() == CardType.SPELL && labelHandler.type == LabelHandler.Type.SPELL)
                 labelHandler.label.Visible = true;
         }
+        
+        labelDict["name"].label.Text = cardInfo.name;
+        labelDict["mana"].label.Text = cardInfo.cost.ToString();
+        labelDict["manaSpell"].label.Text = cardInfo.cost.ToString();
+        labelDict["attack"].label.Text = cardInfo.attack.ToString();
+        labelDict["health"].label.Text = cardInfo.health.ToString();
+        TextLabel.BbcodeText = "[center]"+cardInfo.text+"[/center]";
     }
 
     public void setImage(Texture texture)
@@ -155,32 +170,6 @@ public partial class Card : Control
         material.SetShaderParam("texture1", texture);
         material.SetShaderParam("texture2", currentMask);
         CardImg.Material = material;
-    }
-
-    public void setName(string name)
-    {
-        labelDict["name"].label.Text = name;
-    }
-
-    public void setCost(string mana)
-    {
-        labelDict["mana"].label.Text = mana;
-        labelDict["manaSpell"].label.Text = mana;
-    }
-
-    public void setAttack(string attack)
-    {
-        labelDict["attack"].label.Text = attack;
-    }
-
-    public void setHealth(string health)
-    {
-        labelDict["health"].label.Text = health;
-    }
-
-    public void setText(string text)
-    {
-        TextLabel.BbcodeText = "[center]"+text+"[/center]";
     }
     
     public void OnCardResized()

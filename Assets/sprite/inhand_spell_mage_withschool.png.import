@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/card_type_box.png-f575958d38191de558fe8b9fa730cc8e.stex"
+path="res://.import/inhand_spell_mage_withschool.png-2482805c88b0674f57a39ae853e08c78.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprite/card_type_box.png"
-dest_files=[ "res://.import/card_type_box.png-f575958d38191de558fe8b9fa730cc8e.stex" ]
+source_file="res://Assets/sprite/inhand_spell_mage_withschool.png"
+dest_files=[ "res://.import/inhand_spell_mage_withschool.png-2482805c88b0674f57a39ae853e08c78.stex" ]
 
 [params]
 

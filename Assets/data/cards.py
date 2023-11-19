@@ -28,6 +28,7 @@ def save_img(_id):
 output = []
 for item in data:
     if item['id'] in cards:
+        #print(item)
         #save_img(item['id'])
 
         _id = item['id']
@@ -53,7 +54,11 @@ for item in data:
 
         _race = ""
         if 'race' in item:
-            _race = item['race']
+            _race = item['race'].title()
+
+        _spellSchool = ""
+        if 'spellSchool' in item:
+            _spellSchool = item['spellSchool'].title()
 
         output.append({
             'id':_id,
@@ -64,7 +69,8 @@ for item in data:
             'attack':_attack,
             'health':_health,
             'text':_text,
-            'race':_race})
+            'race':_race,
+            'spellSchool':_spellSchool})
 
 print(f"Successfully processed {len(output)} cards!")
 

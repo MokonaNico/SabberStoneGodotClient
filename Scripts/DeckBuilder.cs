@@ -18,7 +18,8 @@ public class CardInfo
     public int health { get; set; }
     public string text { get; set; }
     public string race { get; set; }
-
+    public string spellSchool { get; set; }
+    
     public CardType GetType()
     {
         if (type == "MINION") return CardType.MINION;
@@ -87,13 +88,7 @@ public class DeckBuilder : Control
         string raceLowerCase = "";
         if (!cardInfo.race.Empty()) 
             raceLowerCase = cardInfo.race.Substring(0, 1) + cardInfo.race.Substring(1).ToLower();
-        card.setTypeAndRace(cardInfo.GetType(), raceLowerCase);
-        card.setName(cardInfo.name);
-        card.setCost(cardInfo.cost.ToString());
-        card.setAttack(cardInfo.attack.ToString());
-        card.setHealth(cardInfo.health.ToString());
-        card.setText(cardInfo.text.ToString());
-
+        card.setCardInfo(cardInfo);
         
         card.setImage(CardTableLine.selectedCard.image);
     }

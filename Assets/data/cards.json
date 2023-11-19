@@ -8,7 +8,8 @@
         "attack": 1,
         "health": 2,
         "text": "[b]Taunt[/b]",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_022",
@@ -19,7 +20,8 @@
         "attack": 0,
         "health": 0,
         "text": "Transform a minion\ninto a 1/1 Sheep.",
-        "race": ""
+        "race": "",
+        "spellSchool": "Arcane"
     },
     {
         "id": "CS2_023",
@@ -30,7 +32,8 @@
         "attack": 0,
         "health": 0,
         "text": "Draw 2 cards.",
-        "race": ""
+        "race": "",
+        "spellSchool": "Arcane"
     },
     {
         "id": "CS2_024",
@@ -41,7 +44,8 @@
         "attack": 0,
         "health": 0,
         "text": "Deal 3 damage to a\u00a0character and [b]Freeze[/b] it.",
-        "race": ""
+        "race": "",
+        "spellSchool": "Frost"
     },
     {
         "id": "CS2_025",
@@ -52,7 +56,8 @@
         "attack": 0,
         "health": 0,
         "text": "Deal 1 damage to all enemy minions.",
-        "race": ""
+        "race": "",
+        "spellSchool": "Arcane"
     },
     {
         "id": "CS2_026",
@@ -63,7 +68,8 @@
         "attack": 0,
         "health": 0,
         "text": "[b]Freeze[/b] all enemy minions.",
-        "race": ""
+        "race": "",
+        "spellSchool": "Frost"
     },
     {
         "id": "CS2_027",
@@ -74,7 +80,8 @@
         "attack": 0,
         "health": 0,
         "text": "Summon two 0/2 minions with [b]Taunt[/b].",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_029",
@@ -85,7 +92,8 @@
         "attack": 0,
         "health": 0,
         "text": "Deal 6 damage.",
-        "race": ""
+        "race": "",
+        "spellSchool": "Fire"
     },
     {
         "id": "CS2_032",
@@ -96,7 +104,8 @@
         "attack": 0,
         "health": 0,
         "text": "Deal 5 damage to all enemy minions.",
-        "race": ""
+        "race": "",
+        "spellSchool": "Fire"
     },
     {
         "id": "CS2_033",
@@ -107,7 +116,8 @@
         "attack": 3,
         "health": 6,
         "text": "[b]Freeze[/b] any character damaged by this minion.",
-        "race": "ELEMENTAL"
+        "race": "Elemental",
+        "spellSchool": ""
     },
     {
         "id": "CS2_118",
@@ -118,7 +128,8 @@
         "attack": 5,
         "health": 1,
         "text": "",
-        "race": "ELEMENTAL"
+        "race": "Elemental",
+        "spellSchool": ""
     },
     {
         "id": "CS2_119",
@@ -129,7 +140,8 @@
         "attack": 2,
         "health": 7,
         "text": "",
-        "race": "BEAST"
+        "race": "Beast",
+        "spellSchool": ""
     },
     {
         "id": "CS2_120",
@@ -140,7 +152,8 @@
         "attack": 2,
         "health": 3,
         "text": "",
-        "race": "BEAST"
+        "race": "Beast",
+        "spellSchool": ""
     },
     {
         "id": "CS2_121",
@@ -151,7 +164,8 @@
         "attack": 2,
         "health": 2,
         "text": "[b]Taunt[/b]",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_122",
@@ -162,7 +176,8 @@
         "attack": 2,
         "health": 3,
         "text": "Your other minions have +1 Attack.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_124",
@@ -173,7 +188,8 @@
         "attack": 3,
         "health": 1,
         "text": "[b]Charge[/b]",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_125",
@@ -184,7 +200,8 @@
         "attack": 3,
         "health": 3,
         "text": "[b]Taunt[/b]",
-        "race": "BEAST"
+        "race": "Beast",
+        "spellSchool": ""
     },
     {
         "id": "CS2_127",
@@ -195,7 +212,8 @@
         "attack": 1,
         "health": 4,
         "text": "[b]Taunt[/b]",
-        "race": "BEAST"
+        "race": "Beast",
+        "spellSchool": ""
     },
     {
         "id": "CS2_131",
@@ -206,7 +224,8 @@
         "attack": 2,
         "health": 5,
         "text": "[b]Charge[/b]",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_141",
@@ -217,7 +236,8 @@
         "attack": 2,
         "health": 2,
         "text": "[b]Battlecry:[/b] Deal 1 damage.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_142",
@@ -228,7 +248,8 @@
         "attack": 2,
         "health": 2,
         "text": "[b]Spell Damage +1[/b]",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_147",
@@ -239,7 +260,8 @@
         "attack": 2,
         "health": 4,
         "text": "[b]Battlecry:[/b] Draw a card.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_150",
@@ -250,7 +272,8 @@
         "attack": 4,
         "health": 2,
         "text": "[b]Battlecry:[/b] Deal 2 damage.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_155",
@@ -261,7 +284,8 @@
         "attack": 4,
         "health": 7,
         "text": "[b]Spell Damage +1[/b]",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_162",
@@ -272,7 +296,8 @@
         "attack": 6,
         "health": 5,
         "text": "[b]Taunt[/b]",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_168",
@@ -283,7 +308,8 @@
         "attack": 2,
         "health": 1,
         "text": "",
-        "race": "MURLOC"
+        "race": "Murloc",
+        "spellSchool": ""
     },
     {
         "id": "CS2_171",
@@ -294,7 +320,8 @@
         "attack": 1,
         "health": 1,
         "text": "[b]Charge[/b]",
-        "race": "BEAST"
+        "race": "Beast",
+        "spellSchool": ""
     },
     {
         "id": "CS2_172",
@@ -305,7 +332,8 @@
         "attack": 3,
         "health": 2,
         "text": "",
-        "race": "BEAST"
+        "race": "Beast",
+        "spellSchool": ""
     },
     {
         "id": "CS2_173",
@@ -316,7 +344,8 @@
         "attack": 2,
         "health": 1,
         "text": "[b]Charge[/b]",
-        "race": "MURLOC"
+        "race": "Murloc",
+        "spellSchool": ""
     },
     {
         "id": "CS2_179",
@@ -327,7 +356,8 @@
         "attack": 3,
         "health": 5,
         "text": "[b]Taunt[/b]",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_182",
@@ -338,7 +368,8 @@
         "attack": 4,
         "health": 5,
         "text": "",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_186",
@@ -349,7 +380,8 @@
         "attack": 7,
         "health": 7,
         "text": "",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_187",
@@ -360,7 +392,8 @@
         "attack": 5,
         "health": 4,
         "text": "[b]Taunt[/b]",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_189",
@@ -371,7 +404,8 @@
         "attack": 1,
         "health": 1,
         "text": "[b]Battlecry:[/b] Deal 1 damage.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_196",
@@ -382,7 +416,8 @@
         "attack": 2,
         "health": 3,
         "text": "[b]Battlecry:[/b] Summon a 1/1\u00a0Boar.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_197",
@@ -393,7 +428,8 @@
         "attack": 4,
         "health": 4,
         "text": "[b]Spell Damage +1[/b]",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_200",
@@ -404,7 +440,8 @@
         "attack": 6,
         "health": 7,
         "text": "",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_201",
@@ -415,7 +452,8 @@
         "attack": 9,
         "health": 5,
         "text": "",
-        "race": "BEAST"
+        "race": "Beast",
+        "spellSchool": ""
     },
     {
         "id": "CS2_213",
@@ -426,7 +464,8 @@
         "attack": 5,
         "health": 2,
         "text": "[b]Charge[/b]",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_222",
@@ -437,7 +476,8 @@
         "attack": 7,
         "health": 7,
         "text": "Your other minions have +1/+1.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "CS2_226",
@@ -448,7 +488,8 @@
         "attack": 4,
         "health": 4,
         "text": "[b]Battlecry:[/b] Gain +1/+1 for each other friendly minion on the battlefield.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "DS1_055",
@@ -459,7 +500,8 @@
         "attack": 4,
         "health": 5,
         "text": "[b]Battlecry:[/b] Restore 2 Health to all friendly characters.",
-        "race": "NAGA"
+        "race": "Naga",
+        "spellSchool": ""
     },
     {
         "id": "EX1_011",
@@ -470,7 +512,8 @@
         "attack": 2,
         "health": 1,
         "text": "[b]Battlecry:[/b] Restore 2\u00a0Health.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "EX1_015",
@@ -481,7 +524,8 @@
         "attack": 1,
         "health": 1,
         "text": "[b]Battlecry:[/b] Draw a card.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "EX1_019",
@@ -492,7 +536,8 @@
         "attack": 3,
         "health": 2,
         "text": "[b]Battlecry:[/b] Give a friendly minion +1/+1.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "EX1_025",
@@ -503,7 +548,8 @@
         "attack": 2,
         "health": 4,
         "text": "[b]Battlecry:[/b] Summon a 2/1 Mechanical Dragonling.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "EX1_066",
@@ -514,7 +560,8 @@
         "attack": 3,
         "health": 2,
         "text": "[b]Battlecry:[/b] Destroy your opponent's weapon.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "EX1_277",
@@ -525,7 +572,8 @@
         "attack": 0,
         "health": 0,
         "text": "Deal 3 damage randomly split among all enemies.",
-        "race": ""
+        "race": "",
+        "spellSchool": "Arcane"
     },
     {
         "id": "EX1_399",
@@ -536,7 +584,8 @@
         "attack": 2,
         "health": 8,
         "text": "Whenever this minion takes damage, gain +3\u00a0Attack.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "EX1_506",
@@ -547,7 +596,8 @@
         "attack": 2,
         "health": 1,
         "text": "[b]Battlecry:[/b] Summon a 1/1\u00a0Murloc Scout.",
-        "race": "MURLOC"
+        "race": "Murloc",
+        "spellSchool": ""
     },
     {
         "id": "EX1_508",
@@ -558,7 +608,8 @@
         "attack": 1,
         "health": 1,
         "text": "Your other Murlocs have +1 Attack.",
-        "race": "MURLOC"
+        "race": "Murloc",
+        "spellSchool": ""
     },
     {
         "id": "EX1_582",
@@ -569,7 +620,8 @@
         "attack": 1,
         "health": 4,
         "text": "[b]Spell Damage +1[/b]",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     },
     {
         "id": "EX1_593",
@@ -580,6 +632,7 @@
         "attack": 4,
         "health": 4,
         "text": "[b]Battlecry: [/b]Deal 3 damage to the enemy hero.",
-        "race": ""
+        "race": "",
+        "spellSchool": ""
     }
 ]

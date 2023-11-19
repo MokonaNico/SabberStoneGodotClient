@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/ScrollContainer.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/DeckBuilder.cs" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/sprite/inhand_minion_neutral_upscayl.png" type="Texture" id=5]
 [ext_resource path="res://Assets/mask/card_spell_mask.png" type="Texture" id=6]
 [ext_resource path="res://Assets/mask/card_mask - Copie.png" type="Texture" id=7]
+[ext_resource path="res://Assets/sprite/inhand_minion_neutral_withrace.png" type="Texture" id=8]
 
 [node name="Main" type="Node"]
 
@@ -155,6 +156,7 @@ margin_right = 271.0
 margin_bottom = 341.0
 size_flags_vertical = 3
 MinionCardImg = ExtResource( 5 )
+MinionCardImgWithRace = ExtResource( 8 )
 SpellCardImg = ExtResource( 4 )
 MinionCardMask = ExtResource( 7 )
 SpellCardMask = ExtResource( 6 )

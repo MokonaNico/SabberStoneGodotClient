@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 using SabberStoneCore.Enums;
 using SabberStoneCore.Model;
@@ -16,6 +17,7 @@ public class CardInfo
     public int attack { get; set; }
     public int health { get; set; }
     public string text { get; set; }
+    public string race { get; set; }
 
     public CardType GetType()
     {
@@ -80,13 +82,20 @@ public class DeckBuilder : Control
     {
         string id = CardTableLine.selectedCard.id;
 
-        card.setType(CardTableLine.selectedCard.type);
+        CardInfo cardInfo = cardsJson.Where(i => i.id == id).First();
+
+        string raceLowerCase = "";
+        if (!cardInfo.race.Empty()) 
+            raceLowerCase = cardInfo.race.Substring(0, 1) + cardInfo.race.Substring(1).ToLower();
+        card.setTypeAndRace(cardInfo.GetType(), raceLowerCase);
+        card.setName(cardInfo.name);
+        card.setCost(cardInfo.cost.ToString());
+        card.setAttack(cardInfo.attack.ToString());
+        card.setHealth(cardInfo.health.ToString());
+        card.setText(cardInfo.text.ToString());
+
+        
         card.setImage(CardTableLine.selectedCard.image);
-        card.setName(CardTableLine.selectedCard.name);
-        card.setCost(CardTableLine.selectedCard.cost);
-        card.setAttack(CardTableLine.selectedCard.attack);
-        card.setHealth(CardTableLine.selectedCard.health);
-        card.setText(CardTableLine.selectedCard.text);
     }
 
     private void onAddCardButtonpressed()
@@ -127,12 +136,7 @@ public class DeckBuilder : Control
         classLabel.Text = card.cardClass;
         
         instance.id = card.id;
-        instance.name = card.name;
-        instance.cost = card.cost.ToString();
-        instance.attack = card.attack.ToString();
-        instance.health = card.health.ToString();
-        instance.text = card.text;
-        instance.type = card.GetType();
+        
         instance.table = table;
         instance.image = (Texture)ResourceLoader.Load("res://Assets/cards/" + card.id + ".jpg");
         return instance;

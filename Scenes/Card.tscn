@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/sprite/inhand_minion_neutral_upscayl.png" type="Texture" id=1]
+[ext_resource path="res://Assets/sprite/inhand_minion_neutral_withrace.png" type="Texture" id=1]
 [ext_resource path="res://Assets/shader/mask.tres" type="Material" id=2]
 [ext_resource path="res://Assets/cards/CS2_189.jpg" type="Texture" id=3]
 [ext_resource path="res://Scripts/Card.cs" type="Script" id=4]
@@ -47,6 +47,19 @@ anchor_right = 0.8
 anchor_bottom = 0.6
 size_flags_vertical = 3
 text = "Elven Archer"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RaceLabel" type="Label" parent="CardTemplate"]
+anchor_left = 0.33125
+anchor_top = 0.893333
+anchor_right = 0.670833
+anchor_bottom = 0.941667
+size_flags_vertical = 3
+text = "RACE"
 align = 1
 valign = 1
 __meta__ = {
@@ -103,9 +116,9 @@ __meta__ = {
 
 [node name="TextLabel" type="RichTextLabel" parent="CardTemplate"]
 anchor_left = 0.21875
-anchor_top = 0.746667
+anchor_top = 0.73
 anchor_right = 0.770833
-anchor_bottom = 0.795
+anchor_bottom = 0.778333
 size_flags_vertical = 4
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true

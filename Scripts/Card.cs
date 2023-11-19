@@ -33,6 +33,7 @@ public partial class Card : Control
     private Dictionary<string, LabelHandler> labelDict = new Dictionary<string, LabelHandler>();
     
     [Export] private Texture MinionCardImg;
+    [Export] private Texture MinionCardImgWithRace;
     [Export] private Texture SpellCardImg;
 
     [Export] private Texture MinionCardMask;
@@ -71,6 +72,7 @@ public partial class Card : Control
         addNewCardToDict("CardTemplate/ManaLabelSpell", "manaSpell", BelweFont, 1.0f, LabelHandler.Type.SPELL);
         addNewCardToDict("CardTemplate/AttackLabel", "attack", BelweFont, 1.0f, LabelHandler.Type.MINION);
         addNewCardToDict("CardTemplate/HealthLabel", "health", BelweFont, 1.0f, LabelHandler.Type.MINION);
+        addNewCardToDict("CardTemplate/RaceLabel", "race", BelweFont, 1.0f, LabelHandler.Type.BOTH);
 
         TextLabel.BbcodeText = "[b]Battlecry:[/b] Deal 1 damage";
         
@@ -112,11 +114,16 @@ public partial class Card : Control
         labelDict.Add(key, new LabelHandler(label, place, font, fontSize, type));
     }
 
-    public void setType(CardType type)
+    public void setTypeAndRace(CardType type, string race)
     {
+        labelDict["race"].label.Text = race;
+        
         if (type == CardType.MINION)
         {
-            CardFrame.Texture = MinionCardImg;
+            if (race.Empty())
+                CardFrame.Texture = MinionCardImg;
+            else
+                CardFrame.Texture = MinionCardImgWithRace;
             currentMask = MinionCardMask;
         }
         else if (type == CardType.SPELL)
@@ -175,7 +182,7 @@ public partial class Card : Control
     {
         TextLabel.BbcodeText = "[center]"+text+"[/center]";
     }
-
+    
     public void OnCardResized()
     {
         if (!isInit) return;

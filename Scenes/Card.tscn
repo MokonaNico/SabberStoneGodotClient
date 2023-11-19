@@ -128,10 +128,10 @@ __meta__ = {
 }
 
 [node name="TextLabel" type="RichTextLabel" parent="CardTemplate"]
-anchor_left = 0.21875
-anchor_top = 0.73
-anchor_right = 0.770833
-anchor_bottom = 0.778333
+anchor_left = 0.24375
+anchor_top = 0.723333
+anchor_right = 0.752083
+anchor_bottom = 0.771667
 size_flags_vertical = 4
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true

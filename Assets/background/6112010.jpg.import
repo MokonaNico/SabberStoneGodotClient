@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/card_spell_mask.png-5bf394a3348a029b7a319e96d6dc368f.stex"
+path="res://.import/6112010.jpg-0c85acd18da64fd60381698d12a85a32.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/mask/card_spell_mask.png"
-dest_files=[ "res://.import/card_spell_mask.png-5bf394a3348a029b7a319e96d6dc368f.stex" ]
+source_file="res://Assets/background/6112010.jpg"
+dest_files=[ "res://.import/6112010.jpg-0c85acd18da64fd60381698d12a85a32.stex" ]
 
 [params]
 

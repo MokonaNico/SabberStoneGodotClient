@@ -1,0 +1,356 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/ScrollContainer.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Card.cs" type="Script" id=3]
+[ext_resource path="res://Scripts/DeckBuilder.cs" type="Script" id=4]
+
+[node name="DeckBuilder" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 560.0
+size_flags_vertical = 3
+
+[node name="CardList" type="Panel" parent="VBoxContainer/HBoxContainer"]
+margin_right = 362.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="Table" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/CardList"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+custom_constants/separation = 0
+
+[node name="Header" type="Control" parent="VBoxContainer/HBoxContainer/CardList/Table"]
+margin_right = 342.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/CardList/Table/Header"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/CardList/Table/Header/HBoxContainer"]
+margin_top = 3.0
+margin_right = 124.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 97, 0 )
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer/CardList/Table/Header/HBoxContainer"]
+margin_left = 128.0
+margin_right = 132.0
+margin_bottom = 20.0
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/CardList/Table/Header/HBoxContainer"]
+margin_left = 136.0
+margin_top = 3.0
+margin_right = 206.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 70, 0 )
+text = "Type"
+
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/HBoxContainer/CardList/Table/Header/HBoxContainer"]
+margin_left = 210.0
+margin_right = 214.0
+margin_bottom = 20.0
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer/CardList/Table/Header/HBoxContainer"]
+margin_left = 218.0
+margin_top = 3.0
+margin_right = 248.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 30, 0 )
+text = "Cost"
+
+[node name="VSeparator4" type="VSeparator" parent="VBoxContainer/HBoxContainer/CardList/Table/Header/HBoxContainer"]
+margin_left = 252.0
+margin_right = 256.0
+margin_bottom = 20.0
+
+[node name="Label5" type="Label" parent="VBoxContainer/HBoxContainer/CardList/Table/Header/HBoxContainer"]
+margin_left = 260.0
+margin_top = 3.0
+margin_right = 330.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 70, 0 )
+text = "Class"
+
+[node name="Label7" type="Label" parent="VBoxContainer/HBoxContainer/CardList/Table/Header/HBoxContainer"]
+margin_left = 334.0
+margin_top = 3.0
+margin_right = 342.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 8, 0 )
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/CardList/Table"]
+margin_top = 20.0
+margin_right = 342.0
+margin_bottom = 24.0
+
+[node name="Data" type="Control" parent="VBoxContainer/HBoxContainer/CardList/Table"]
+margin_top = 24.0
+margin_right = 342.0
+margin_bottom = 540.0
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/CardList/Table/Data"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+scroll_horizontal_enabled = false
+scroll_deadzone = 200
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/CardList/Table/Data/ScrollContainer"]
+margin_right = 342.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 12
+
+[node name="TableData" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/CardList/Table/Data/ScrollContainer/MarginContainer"]
+margin_right = 330.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardViewer" type="Panel" parent="VBoxContainer/HBoxContainer"]
+margin_left = 366.0
+margin_right = 657.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/CardViewer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="Card" type="AspectRatioContainer" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer" instance=ExtResource( 1 )]
+margin_right = 271.0
+margin_bottom = 341.0
+size_flags_vertical = 3
+ratio = 0.8
+script = ExtResource( 3 )
+
+[node name="AddCardButton" type="Button" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
+margin_top = 345.0
+margin_right = 271.0
+margin_bottom = 370.0
+rect_min_size = Vector2( 0, 25 )
+text = "Add card"
+
+[node name="RemoveCardButton" type="Button" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
+margin_top = 374.0
+margin_right = 271.0
+margin_bottom = 399.0
+rect_min_size = Vector2( 0, 25 )
+text = "Remove card"
+
+[node name="OptionPanel" type="Panel" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
+margin_top = 403.0
+margin_right = 271.0
+margin_bottom = 540.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="DeckList" type="Panel" parent="VBoxContainer/HBoxContainer"]
+margin_left = 661.0
+margin_right = 1024.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="Table" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/DeckList"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+custom_constants/separation = 0
+
+[node name="Header" type="Control" parent="VBoxContainer/HBoxContainer/DeckList/Table"]
+margin_right = 343.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/DeckList/Table/Header"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/DeckList/Table/Header/HBoxContainer"]
+margin_top = 3.0
+margin_right = 125.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 97, 0 )
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer/DeckList/Table/Header/HBoxContainer"]
+margin_left = 129.0
+margin_right = 133.0
+margin_bottom = 20.0
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/DeckList/Table/Header/HBoxContainer"]
+margin_left = 137.0
+margin_top = 3.0
+margin_right = 207.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 70, 0 )
+text = "Type"
+
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/HBoxContainer/DeckList/Table/Header/HBoxContainer"]
+margin_left = 211.0
+margin_right = 215.0
+margin_bottom = 20.0
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer/DeckList/Table/Header/HBoxContainer"]
+margin_left = 219.0
+margin_top = 3.0
+margin_right = 249.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 30, 0 )
+text = "Cost"
+
+[node name="VSeparator4" type="VSeparator" parent="VBoxContainer/HBoxContainer/DeckList/Table/Header/HBoxContainer"]
+margin_left = 253.0
+margin_right = 257.0
+margin_bottom = 20.0
+
+[node name="Label5" type="Label" parent="VBoxContainer/HBoxContainer/DeckList/Table/Header/HBoxContainer"]
+margin_left = 261.0
+margin_top = 3.0
+margin_right = 331.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 70, 0 )
+text = "Class"
+
+[node name="Label7" type="Label" parent="VBoxContainer/HBoxContainer/DeckList/Table/Header/HBoxContainer"]
+margin_left = 335.0
+margin_top = 3.0
+margin_right = 343.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 8, 0 )
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/DeckList/Table"]
+margin_top = 20.0
+margin_right = 343.0
+margin_bottom = 24.0
+
+[node name="Data" type="Control" parent="VBoxContainer/HBoxContainer/DeckList/Table"]
+margin_top = 24.0
+margin_right = 343.0
+margin_bottom = 540.0
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/DeckList/Table/Data"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+scroll_horizontal_enabled = false
+scroll_deadzone = 200
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/DeckList/Table/Data/ScrollContainer"]
+margin_right = 343.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 12
+
+[node name="TableData" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/DeckList/Table/Data/ScrollContainer/MarginContainer"]
+margin_right = 331.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+margin_top = 560.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Button" type="Button" parent="VBoxContainer/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -242.0
+margin_top = -32.0
+margin_right = -135.0
+margin_bottom = -9.0
+text = "Save deck"
+
+[node name="Button2" type="Button" parent="VBoxContainer/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -126.0
+margin_top = -32.0
+margin_right = -19.0
+margin_bottom = -9.0
+text = "Quit"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -434.0
+margin_top = -32.0
+margin_right = -249.0
+margin_bottom = -8.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -516.0
+margin_top = -26.0
+margin_right = -436.0
+margin_bottom = -7.0
+text = "Deck name :"
+
+[node name="Label2" type="Label" parent="VBoxContainer/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -625.0
+margin_top = -25.0
+margin_right = -537.0
+margin_bottom = -11.0
+text = "Card count :"
+
+[node name="CardCountLabel" type="Label" parent="VBoxContainer/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -546.0
+margin_top = -25.0
+margin_right = -525.0
+margin_bottom = -11.0
+text = "0"
+valign = 1
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/AddCardButton" to="." method="onAddCardButtonpressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/RemoveCardButton" to="." method="onRemoveCardButtonpressed"]

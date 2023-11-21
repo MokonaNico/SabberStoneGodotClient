@@ -34,10 +34,20 @@ public partial class Card : Control
 
     // First 4 are neutral and 4 next are mage
     // In this order : minion, minion with race, spell, spell with school
-    [Export] private List<Texture> CardBorderImgs;
+    private List<Texture> CardBorderImgs = new List<Texture>()
+    {
+        ResourceLoader.Load<Texture>("res://Assets/sprite/inhand_minion_neutral_upscayl.png"),
+        ResourceLoader.Load<Texture>("res://Assets/sprite/inhand_minion_neutral_withrace_upscayl.png"),
+        ResourceLoader.Load<Texture>("res://Assets/sprite/inhand_spell_neutral_upscayl.png"),
+        ResourceLoader.Load<Texture>("res://Assets/sprite/inhand_spell_neutral_withschool_upscayl.png"),
+        ResourceLoader.Load<Texture>("res://Assets/sprite/inhand_minion_mage_upscayl.png"),
+        ResourceLoader.Load<Texture>("res://Assets/sprite/inhand_minion_mage_withrace_upscayl.png"),
+        ResourceLoader.Load<Texture>("res://Assets/sprite/inhand_spell_mage_upscayl.png"),
+        ResourceLoader.Load<Texture>("res://Assets/sprite/inhand_spell_mage_withschool_upscayl.png"),
+    };
 
-    [Export] private Texture MinionCardMask;
-    [Export] private Texture SpellCardMask;
+    private Texture MinionCardMask = ResourceLoader.Load<Texture>("res://Assets/mask/minion_mask.png");
+    private Texture SpellCardMask = ResourceLoader.Load<Texture>("res://Assets/mask/spell_mask.png");
 
     private Control cardTemplate;
     private TextureRect CardFrame;

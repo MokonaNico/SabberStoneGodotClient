@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/card_mask - Copie.png-af54025128d279dddc7b70ec8aafa71a.stex"
+path="res://.import/inhand_minion_mage_withrace_upscayl.png-59ea376975a3434aaedc4cbdfd07e9f8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/mask/card_mask - Copie.png"
-dest_files=[ "res://.import/card_mask - Copie.png-af54025128d279dddc7b70ec8aafa71a.stex" ]
+source_file="res://Assets/sprite/inhand_minion_mage_withrace_upscayl.png"
+dest_files=[ "res://.import/inhand_minion_mage_withrace_upscayl.png-59ea376975a3434aaedc4cbdfd07e9f8.stex" ]
 
 [params]
 

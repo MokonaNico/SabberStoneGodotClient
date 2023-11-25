@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Card.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/ScrollContainer.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/DeckBuilder.cs" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
 
 [node name="DeckBuilder" type="Control"]
 anchor_right = 1.0
@@ -141,34 +143,123 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
+custom_constants/separation = 10
 
 [node name="Card" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 271.0
-margin_bottom = 341.0
+margin_bottom = 328.0
 size_flags_vertical = 3
 
 [node name="AddCardButton" type="Button" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
-margin_top = 345.0
+margin_top = 338.0
 margin_right = 271.0
-margin_bottom = 370.0
+margin_bottom = 363.0
 rect_min_size = Vector2( 0, 25 )
 text = "Add card"
 
 [node name="RemoveCardButton" type="Button" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
-margin_top = 374.0
+margin_top = 373.0
 margin_right = 271.0
-margin_bottom = 399.0
+margin_bottom = 398.0
 rect_min_size = Vector2( 0, 25 )
 text = "Remove card"
 
 [node name="OptionPanel" type="Panel" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer"]
-margin_top = 403.0
+margin_top = 408.0
 margin_right = 271.0
 margin_bottom = 540.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CardListOption" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer"]
+margin_right = 129.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/CardListOption"]
+margin_right = 129.0
+margin_bottom = 14.0
+text = "Filter"
+
+[node name="FilterCardList" type="OptionButton" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/CardListOption"]
+margin_top = 18.0
+margin_right = 129.0
+margin_bottom = 38.0
+text = "None"
+items = [ "None", null, false, 0, null, "Neural", null, false, 1, null, "Mage", null, false, 2, null ]
+selected = 0
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/CardListOption"]
+margin_top = 42.0
+margin_right = 129.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 0, 20 )
+custom_styles/separator = SubResource( 1 )
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/CardListOption"]
+margin_top = 66.0
+margin_right = 129.0
+margin_bottom = 80.0
+text = "Sort by"
+
+[node name="SortByCardList" type="OptionButton" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/CardListOption"]
+margin_top = 84.0
+margin_right = 129.0
+margin_bottom = 104.0
+text = "Cost"
+items = [ "Name", null, false, 0, null, "Type", null, false, 1, null, "Cost", null, false, 2, null, "Class", null, false, 3, null ]
+selected = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer"]
+margin_left = 133.0
+margin_right = 137.0
+margin_bottom = 132.0
+
+[node name="DeckListOption" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer"]
+margin_left = 141.0
+margin_right = 271.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/DeckListOption"]
+margin_right = 130.0
+margin_bottom = 14.0
+text = "Filter"
+
+[node name="FilterDeckList" type="OptionButton" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/DeckListOption"]
+margin_top = 18.0
+margin_right = 130.0
+margin_bottom = 38.0
+text = "None"
+items = [ "None", null, false, 0, null, "Neutral", null, false, 1, null, "Mage", null, false, 2, null ]
+selected = 0
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/DeckListOption"]
+margin_top = 42.0
+margin_right = 130.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 0, 20 )
+custom_styles/separator = SubResource( 1 )
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/DeckListOption"]
+margin_top = 66.0
+margin_right = 130.0
+margin_bottom = 80.0
+text = "Sort by"
+
+[node name="SortByDeckList" type="OptionButton" parent="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/DeckListOption"]
+margin_top = 84.0
+margin_right = 130.0
+margin_bottom = 104.0
+text = "Cost"
+items = [ "Name", null, false, 0, null, "Type", null, false, 1, null, "Cost", null, false, 2, null, "Class", null, false, 3, null ]
+selected = 2
 
 [node name="DeckList" type="Panel" parent="VBoxContainer/HBoxContainer"]
 margin_left = 661.0
@@ -285,36 +376,36 @@ margin_right = 1024.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 0, 40 )
 
-[node name="Button" type="Button" parent="VBoxContainer/Panel"]
+[node name="SaveDeckButton" type="Button" parent="VBoxContainer/Panel"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -242.0
+margin_left = -207.0
 margin_top = -32.0
-margin_right = -135.0
+margin_right = -116.0
 margin_bottom = -9.0
 text = "Save deck"
 
-[node name="Button2" type="Button" parent="VBoxContainer/Panel"]
+[node name="QuitButton" type="Button" parent="VBoxContainer/Panel"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -126.0
+margin_left = -107.0
 margin_top = -32.0
 margin_right = -19.0
 margin_bottom = -9.0
-text = "Quit"
+text = "Menu"
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/Panel"]
+[node name="DeckNameLineEdit" type="LineEdit" parent="VBoxContainer/Panel"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -434.0
+margin_left = -366.0
 margin_top = -32.0
-margin_right = -249.0
+margin_right = -216.0
 margin_bottom = -8.0
 
 [node name="Label" type="Label" parent="VBoxContainer/Panel"]
@@ -322,9 +413,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -516.0
+margin_left = -450.0
 margin_top = -26.0
-margin_right = -436.0
+margin_right = -370.0
 margin_bottom = -7.0
 text = "Deck name :"
 
@@ -333,10 +424,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -625.0
-margin_top = -25.0
-margin_right = -537.0
-margin_bottom = -11.0
+margin_left = -558.0
+margin_top = -26.0
+margin_right = -470.0
+margin_bottom = -12.0
 text = "Card count :"
 
 [node name="CardCountLabel" type="Label" parent="VBoxContainer/Panel"]
@@ -344,12 +435,50 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -546.0
-margin_top = -25.0
-margin_right = -525.0
-margin_bottom = -11.0
+margin_left = -480.0
+margin_top = -26.0
+margin_right = -459.0
+margin_bottom = -12.0
 text = "0"
 valign = 1
 
+[node name="LoadDeckList" type="OptionButton" parent="VBoxContainer/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 13.0
+margin_top = -31.0
+margin_right = 148.0
+margin_bottom = -9.0
+clip_text = true
+
+[node name="LoadDeckButton" type="Button" parent="VBoxContainer/Panel"]
+margin_left = 160.0
+margin_top = 8.0
+margin_right = 236.0
+margin_bottom = 31.0
+text = "Load deck"
+
+[node name="DeleteDeckButton" type="Button" parent="VBoxContainer/Panel"]
+margin_left = 247.0
+margin_top = 8.0
+margin_right = 336.0
+margin_bottom = 31.0
+text = "Delete deck"
+
+[node name="ClearDeckButton" type="Button" parent="VBoxContainer/Panel"]
+margin_left = 347.0
+margin_top = 8.0
+margin_right = 408.0
+margin_bottom = 31.0
+text = "Clear"
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/AddCardButton" to="." method="onAddCardButtonpressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/RemoveCardButton" to="." method="onRemoveCardButtonpressed"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/CardListOption/FilterCardList" to="." method="onFilterCardListItemSelected"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/CardListOption/SortByCardList" to="." method="onSortByCardListItemSelected"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/DeckListOption/FilterDeckList" to="." method="onFilterDeckListItemSelected"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/DeckListOption/SortByDeckList" to="." method="onSortByDeckListItemSelected"]
+[connection signal="pressed" from="VBoxContainer/Panel/SaveDeckButton" to="." method="onSaveDeckButtonPressed"]
+[connection signal="pressed" from="VBoxContainer/Panel/LoadDeckButton" to="." method="onLoadDeckButtonPressed"]
+[connection signal="pressed" from="VBoxContainer/Panel/DeleteDeckButton" to="." method="onDeleteDeckButtonPressed"]
+[connection signal="pressed" from="VBoxContainer/Panel/ClearDeckButton" to="." method="onClearDeckButtonPressed"]

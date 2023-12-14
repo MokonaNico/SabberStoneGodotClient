@@ -479,6 +479,7 @@ text = "Clear"
 [connection signal="item_selected" from="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/DeckListOption/FilterDeckList" to="." method="onFilterDeckListItemSelected"]
 [connection signal="item_selected" from="VBoxContainer/HBoxContainer/CardViewer/VBoxContainer/OptionPanel/HBoxContainer/DeckListOption/SortByDeckList" to="." method="onSortByDeckListItemSelected"]
 [connection signal="pressed" from="VBoxContainer/Panel/SaveDeckButton" to="." method="onSaveDeckButtonPressed"]
+[connection signal="pressed" from="VBoxContainer/Panel/QuitButton" to="." method="onQuitButtonPressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/LoadDeckButton" to="." method="onLoadDeckButtonPressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/DeleteDeckButton" to="." method="onDeleteDeckButtonPressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/ClearDeckButton" to="." method="onClearDeckButtonPressed"]

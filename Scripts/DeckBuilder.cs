@@ -317,4 +317,9 @@ public class DeckBuilder : Control
     {
         removeAllCards();
     }
+
+    private void onQuitButtonPressed()
+    {
+        Main.windowHandler.switchTo("MainMenu");
+    }
 }

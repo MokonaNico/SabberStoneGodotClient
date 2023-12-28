@@ -1,10 +1,15 @@
-  using Godot;
+using Godot;
 using System;
 using System.Collections.Generic;
 using SabberStoneCore.Enums;
 
-public partial class Card : Control
+public class Card : Control
 {
+    /**
+     * This internal class is used to store information on the different label that are on the card
+     * like the label, the place (zone where the text of the label must be), the fond, the font size
+     * and the type (which indicate on which type of card the label must be render.
+     */
     private class LabelHandler
     {
         public enum Type

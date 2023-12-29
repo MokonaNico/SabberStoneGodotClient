@@ -53,10 +53,10 @@ public class Game : Control
             CardInfo cardInfo = new CardInfo
             {
                  cost = cards.Cost,
-                 id = cards
+                 //id = cards
             };
             
-            instance.setCardInfo();
+            //instance.setCardInfo();
         }
     }
     

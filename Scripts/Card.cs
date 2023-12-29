@@ -3,13 +3,17 @@ using System;
 using System.Collections.Generic;
 using SabberStoneCore.Enums;
 
-public class Card : Control
+/// <summary>
+/// Class Card that is attached to Card object in the game
+/// This class handle all the information about the card and handle the size of label
+/// </summary>
+public  class Card : Control
 {
-    /**
-     * This internal class is used to store information on the different label that are on the card
-     * like the label, the place (zone where the text of the label must be), the fond, the font size
-     * and the type (which indicate on which type of card the label must be render.
-     */
+    /// <summary>
+    /// This internal class is used to store information on the different label that are on the card
+    /// like the label, the place (zone where the text of the label must be), the fond, the font size
+    /// and the type (which indicate on which type of card the label must be render.
+    /// </summary>
     private class LabelHandler
     {
         public enum Type
@@ -19,6 +23,14 @@ public class Card : Control
             BOTH
         };
 
+        /// <summary>
+        /// Constructor of the LabelHandle
+        /// </summary>
+        /// <param name="_label"> The label node from godot </param>
+        /// <param name="_place"> A control node that reprensent the place where the label must be </param>
+        /// <param name="_font"> The font of this label </param>
+        /// <param name="_fontSize"> The size of the font </param>
+        /// <param name="_type"> The type of label, to know on which card it should be on or off </param>
         public LabelHandler(Label _label, Control _place, DynamicFont _font, float _fontSize, Type _type)
         {
             label = _label;
@@ -34,9 +46,11 @@ public class Card : Control
         public float fontSize { get; set; }
         public Type type { get; set; }
     }
-
+    
+    // The dictionary of the different label that compose the card
     private Dictionary<string, LabelHandler> labelDict = new Dictionary<string, LabelHandler>();
-
+    
+    // All the card border
     // First 4 are neutral and 4 next are mage
     // In this order : minion, minion with race, spell, spell with school
     private List<Texture> CardBorderImgs = new List<Texture>()
@@ -51,6 +65,7 @@ public class Card : Control
         ResourceLoader.Load<Texture>("res://Assets/sprite/inhand_spell_mage_withschool_upscayl.png"),
     };
 
+    // Mask to apply
     private Texture MinionCardMask = ResourceLoader.Load<Texture>("res://Assets/mask/minion_mask.png");
     private Texture SpellCardMask = ResourceLoader.Load<Texture>("res://Assets/mask/spell_mask.png");
 
@@ -82,6 +97,7 @@ public class Card : Control
         TextLabel.AddFontOverride("normal_font", LibreFranklinRegular);
         TextLabel.AddFontOverride("bold_font", LibreFranklinBold);
         
+        // Add the different label
         addNewCardToDict("CardTemplate/NameLabel", "name", BelweFont, 1.0f, LabelHandler.Type.BOTH);
         addNewCardToDict("CardTemplate/ManaLabel", "mana", BelweFont, 1.0f, LabelHandler.Type.MINION);
         addNewCardToDict("CardTemplate/ManaLabelSpell", "manaSpell", BelweFont, 1.0f, LabelHandler.Type.SPELL);
@@ -96,6 +112,9 @@ public class Card : Control
         OnCardResized();
     }
 
+    /// <summary>
+    /// Init the font information, set the size as 1 so it don't push the boundaries when the game start
+    /// </summary>
     private void InitFont()
     {
         BelweFont.FontData = ResourceLoader.Load<DynamicFontData>("res://Assets/font/BelweBoldBT.ttf");
@@ -110,6 +129,11 @@ public class Card : Control
         LibreFranklinBold.Size = 1;
     }
 
+    /// <summary>
+    /// Create a copy of the font given in parameters
+    /// </summary>
+    /// <param name="_font"> the font </param>
+    /// <returns> the copy of the font </returns>
     private DynamicFont GetCopy(DynamicFont _font)
     {
         DynamicFont res = new DynamicFont();
@@ -120,6 +144,14 @@ public class Card : Control
         return res;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="nodePath"></param>
+    /// <param name="key"></param>
+    /// <param name="_font"></param>
+    /// <param name="fontSize"></param>
+    /// <param name="type"></param>
     private void addNewCardToDict(string nodePath, string key, DynamicFont _font, float fontSize, LabelHandler.Type type)
     {
         Label label = GetNode<Label>(nodePath);
@@ -198,6 +230,12 @@ public class Card : Control
         LibreFranklinBold.Size = (int) Math.Floor(TextPlace.RectSize.y  * 72 / 96);
     }
 
+    /// <summary>
+    /// Create a node for the label that represent the space that takes that label
+    /// We need to create this because label node change size automaticly with the text inside
+    /// </summary>
+    /// <param name="label"> The label </param>
+    /// <returns> The control node that is exacty at the same place as the label </returns>
     private Control createLabelPlace(Control label)
     {
         Control place = new Control();
